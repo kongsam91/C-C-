@@ -1,0 +1,9 @@
+﻿  CppCLR_WinFormsProject.cpp
+C:\C_2024\HW1\HW1\Form1.h(145,11): warning C4101: 'j': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+C:\C_2024\HW1\HW1\Form1.h(145,8): warning C4101: 'i': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+  AssemblyInfo.obj : 發現 MSIL 模組。MSIL 的累加連結已停用。正在執行完整連結
+  HW1.vcxproj -> C:\C_2024\HW1\x64\Debug\HW1.exe
