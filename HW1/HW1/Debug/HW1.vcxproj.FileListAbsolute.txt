@@ -1,0 +1,3 @@
+C:\Users\YiTing\Source\Repos\kongsam91\Data-Structure\HW1\HW1\Debug\HW1.vcxproj.AssemblyReference.cache
+C:\Users\YiTing\Source\Repos\kongsam91\Data-Structure\HW1\HW1\Debug\HW1.Form1.resources
+C:\Users\YiTing\Source\Repos\kongsam91\Data-Structure\HW1\HW1\Debug\HW1.vcxproj.GenerateResource.cache
