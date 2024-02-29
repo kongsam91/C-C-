@@ -3,7 +3,7 @@
 #include <time.h> 
 #include <string> 
 
-int list[1000]; //全域變數
+int list[10000000]; //全域變數
 
 namespace CppCLRWinFormsProject {
 
@@ -272,6 +272,7 @@ namespace CppCLRWinFormsProject {
 				min = list[n - 1];
 			}
 		}
+		//副程式(計算cpu time)
 
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
@@ -285,21 +286,28 @@ namespace CppCLRWinFormsProject {
 
 		srand(time(NULL));
 		for (int i = 0;i < n;i++)
-		{			
+		{	
+			if(checkBox_PrintOutPut->Checked) {
 			list[i] = rand() % range +1 ; //產生範圍從0到range到數列
 			listBox1->Items->Add("data["+ Convert::ToString(i) +"] = " +list[i]);
-
+			}
 		}
 
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		listBox2->Items->Clear();//每次產生新一輪變數時，會把上次結果清掉
 		SelectionSort(list, int::Parse(textBox1->Text));
-
+		clock_t t_begin, t_end;
+		t_begin = clock();
 		for (int i = 0;i < int::Parse(textBox1->Text);i++)
-		{
-			listBox2->Items->Add("data[" + Convert::ToString(i) + "] = " + list[i]);
+		{	
+			if (checkBox_PrintOutPut->Checked) {
+				listBox2->Items->Add("data[" + Convert::ToString(i) + "] = " + list[i]);
+			}
 		}
+		t_end = clock();
+		listBox2->Items->Add( "CPU time =" + (float)(t_begin - t_end)/CLOCKS_PER_SEC );
+
 	}
 };
 }
