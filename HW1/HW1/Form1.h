@@ -296,18 +296,18 @@ namespace CppCLRWinFormsProject {
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		listBox2->Items->Clear();//每次產生新一輪變數時，會把上次結果清掉
-		SelectionSort(list, int::Parse(textBox1->Text));
 		clock_t t_begin, t_end;
 		t_begin = clock();
+		SelectionSort(list, int::Parse(textBox1->Text));
+		t_end = clock();
+		listBox2->Items->Add("CPU time =" + (float)(t_begin - t_end) / CLOCKS_PER_SEC);
+
 		for (int i = 0;i < int::Parse(textBox1->Text);i++)
 		{	
 			if (checkBox_PrintOutPut->Checked) {
 				listBox2->Items->Add("data[" + Convert::ToString(i) + "] = " + list[i]);
 			}
 		}
-		t_end = clock();
-		listBox2->Items->Add( "CPU time =" + (float)(t_begin - t_end)/CLOCKS_PER_SEC );
-
 	}
 };
 }
