@@ -4,6 +4,7 @@
 #include <string> 
 
 int list[10000000]; //全域變數
+int list_BubbleSort[10000000]; //全域變數
 
 namespace CppCLRWinFormsProject {
 
@@ -55,6 +56,13 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::CheckBox^ checkBox_selfcheck;
 	private: System::Windows::Forms::Label^ label_error;
+	private: System::Windows::Forms::Button^ button_SelfCheck;
+	private: System::Windows::Forms::ListBox^ listBox_BubbleSort;
+
+	private: System::Windows::Forms::Button^ button_BubbleSort;
+	private: System::Windows::Forms::Label^ label_CPUTIME_BS;
+
+
 
 	protected:
 
@@ -86,6 +94,10 @@ namespace CppCLRWinFormsProject {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->checkBox_selfcheck = (gcnew System::Windows::Forms::CheckBox());
 			this->label_error = (gcnew System::Windows::Forms::Label());
+			this->button_SelfCheck = (gcnew System::Windows::Forms::Button());
+			this->listBox_BubbleSort = (gcnew System::Windows::Forms::ListBox());
+			this->button_BubbleSort = (gcnew System::Windows::Forms::Button());
+			this->label_CPUTIME_BS = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -251,11 +263,53 @@ namespace CppCLRWinFormsProject {
 			this->label_error->Size = System::Drawing::Size(0, 20);
 			this->label_error->TabIndex = 14;
 			// 
+			// button_SelfCheck
+			// 
+			this->button_SelfCheck->Location = System::Drawing::Point(437, 821);
+			this->button_SelfCheck->Name = L"button_SelfCheck";
+			this->button_SelfCheck->Size = System::Drawing::Size(146, 42);
+			this->button_SelfCheck->TabIndex = 15;
+			this->button_SelfCheck->Text = L"button3";
+			this->button_SelfCheck->UseVisualStyleBackColor = true;
+			// 
+			// listBox_BubbleSort
+			// 
+			this->listBox_BubbleSort->FormattingEnabled = true;
+			this->listBox_BubbleSort->ItemHeight = 20;
+			this->listBox_BubbleSort->Location = System::Drawing::Point(1040, 232);
+			this->listBox_BubbleSort->Name = L"listBox_BubbleSort";
+			this->listBox_BubbleSort->Size = System::Drawing::Size(209, 424);
+			this->listBox_BubbleSort->TabIndex = 16;
+			// 
+			// button_BubbleSort
+			// 
+			this->button_BubbleSort->Enabled = false;
+			this->button_BubbleSort->Location = System::Drawing::Point(1057, 680);
+			this->button_BubbleSort->Name = L"button_BubbleSort";
+			this->button_BubbleSort->Size = System::Drawing::Size(178, 74);
+			this->button_BubbleSort->TabIndex = 17;
+			this->button_BubbleSort->Text = L"BubbleSort";
+			this->button_BubbleSort->UseVisualStyleBackColor = true;
+			this->button_BubbleSort->Click += gcnew System::EventHandler(this, &Form1::button3_BubbleSort_Click);
+			// 
+			// label_CPUTIME_BS
+			// 
+			this->label_CPUTIME_BS->AutoSize = true;
+			this->label_CPUTIME_BS->Location = System::Drawing::Point(1120, 821);
+			this->label_CPUTIME_BS->Name = L"label_CPUTIME_BS";
+			this->label_CPUTIME_BS->Size = System::Drawing::Size(105, 20);
+			this->label_CPUTIME_BS->TabIndex = 18;
+			this->label_CPUTIME_BS->Text = L"CPU time = ";
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(10, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1304, 915);
+			this->Controls->Add(this->label_CPUTIME_BS);
+			this->Controls->Add(this->button_BubbleSort);
+			this->Controls->Add(this->listBox_BubbleSort);
+			this->Controls->Add(this->button_SelfCheck);
 			this->Controls->Add(this->label_error);
 			this->Controls->Add(this->checkBox_selfcheck);
 			this->Controls->Add(this->label5);
@@ -280,7 +334,7 @@ namespace CppCLRWinFormsProject {
 			this->PerformLayout();
 
 		}
-		//副程式(排序)
+		//副程式(SelectionSort)
 		void SelectionSort(int list[], int n)
 		{
 			int i, j, min = list[0], tmp = list[0];
@@ -298,7 +352,23 @@ namespace CppCLRWinFormsProject {
 				min = list[n - 1];
 			}
 		}
-		//副程式(計算cpu time)
+		//副程式(BubbleSort)
+		void BubbleSort(int list[], int n) {
+			int i,j, bigger = list[0], tmp = list[0];
+
+			for(int j = 0;j<n-1;j++){
+				for (int i = 0; i < n-j-1; i++) {
+					if (list[i] > list[i + 1]) {
+					
+						bigger = list[i];
+						list[i] = list[i+1];
+						list[i + 1] = bigger;
+
+					}
+				}
+			}
+
+		}
 
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
@@ -312,25 +382,28 @@ namespace CppCLRWinFormsProject {
 		{
 			int n = Int32::Parse(textBox1->Text); 
 			int range = Int32::Parse(textBox_range->Text);
-
+			label_error->Text = "";
 			// 如果程式碼能執行到這裡，表示輸入是個整數
 			srand(time(NULL));
 			for (int i = 0;i < n;i++)
 			{
 				if (checkBox_PrintOutPut->Checked) {
 					list[i] = rand() % range + 1; //產生範圍從0到range到數列
+					list_BubbleSort[i] = list[i];
 					listBox1->Items->Add("data[" + Convert::ToString(i) + "] = " + list[i]);
 				}
 			}
+			//沒有數列前不能按排序Button
+			button2->Enabled = true; 
+			button_BubbleSort->Enabled = true; 
 
-			button2->Enabled = true; //沒有數列前不能排序
 		}
 		catch (FormatException^)
 		{
 			// 如果無法將文字轉換成整數，跳Error
-			
+			button2->Enabled = false;
+			button_BubbleSort->Enabled = false;
 			label_error->Text = "ERROR 出現錯誤 請輸入整數";
-
 			label_error->ForeColor = Color::Red;
 
 		}
@@ -341,7 +414,6 @@ namespace CppCLRWinFormsProject {
 		t_begin = clock();
 		SelectionSort(list, int::Parse(textBox1->Text));
 		t_end = clock();
-		//listBox2->Items->Add("CPU time =" + (float)(t_begin - t_end) / CLOCKS_PER_SEC);
 		label_CPUTIME_SS->Text = "CPU time = " + (float)(t_end - t_begin) / CLOCKS_PER_SEC;
 
 		for (int i = 0;i < int::Parse(textBox1->Text);i++)
@@ -353,5 +425,19 @@ namespace CppCLRWinFormsProject {
 	}
 
 
+	private: System::Void button3_BubbleSort_Click(System::Object^ sender, System::EventArgs^ e) {
+		listBox_BubbleSort->Items->Clear();//每次產生新一輪變數時，會把上次結果清掉
+		clock_t t_begin, t_end;
+		t_begin = clock();
+		BubbleSort(list_BubbleSort, int::Parse(textBox1->Text));
+		t_end = clock();
+		label_CPUTIME_BS->Text = "CPU time = " + (float)(t_end - t_begin) / CLOCKS_PER_SEC;
+		for (int i = 0;i < int::Parse(textBox1->Text);i++)
+		{
+			if (checkBox_PrintOutPut->Checked) {
+				listBox_BubbleSort->Items->Add("data[" + Convert::ToString(i) + "] = " + list_BubbleSort[i]);
+			}
+		}
+	}
 };
 }
