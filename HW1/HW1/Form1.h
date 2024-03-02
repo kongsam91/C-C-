@@ -338,6 +338,7 @@ namespace CppCLRWinFormsProject {
 		void SelectionSort(int list[], int n)
 		{
 			int i, j, min = list[0], tmp = list[0];
+
 			for (int j = 0; j < n; j++) {
 
 				for (int i = j; i < n; i++) {
@@ -354,12 +355,13 @@ namespace CppCLRWinFormsProject {
 		}
 		//°Æµ{¦¡(BubbleSort)
 		void BubbleSort(int list[], int n) {
+
 			int i,j, bigger = list[0], tmp = list[0];
 
 			for(int j = 0;j<n-1;j++){
 				for (int i = 0; i < n-j-1; i++) {
-					if (list[i] > list[i + 1]) {
-					
+					if (list[i] > list[i + 1]) {	
+
 						bigger = list[i];
 						list[i] = list[i+1];
 						list[i + 1] = bigger;
