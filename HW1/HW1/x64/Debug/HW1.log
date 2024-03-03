@@ -1,2 +1,18 @@
-﻿  AssemblyInfo.obj : 發現 MSIL 模組。MSIL 的累加連結已停用。正在執行完整連結
-  HW1.vcxproj -> D:\Code\Data-Structure\HW1\x64\Debug\HW1.exe
+﻿  CppCLR_WinFormsProject.cpp
+C:\C_2024\HW1\HW1\Form1.h(340,11): warning C4101: 'j': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+C:\C_2024\HW1\HW1\Form1.h(340,8): warning C4101: 'i': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+C:\C_2024\HW1\HW1\Form1.h(359,10): warning C4101: 'j': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+C:\C_2024\HW1\HW1\Form1.h(359,8): warning C4101: 'i': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+C:\C_2024\HW1\HW1\Form1.h(386,14): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+  AssemblyInfo.obj : 發現 MSIL 模組。MSIL 的累加連結已停用。正在執行完整連結
+  HW1.vcxproj -> C:\C_2024\HW1\x64\Debug\HW1.exe
