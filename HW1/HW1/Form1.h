@@ -63,6 +63,9 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ label_CPUTIME_BS;
 	private: System::Windows::Forms::Button^ button_BinarySearch;
 	private: System::Windows::Forms::ListBox^ listBox_BinarySearch;
+	private: System::Windows::Forms::TextBox^ textBox_BinarySearch;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label_BubbleSort;
 
 
 
@@ -102,6 +105,9 @@ namespace CppCLRWinFormsProject {
 			this->label_CPUTIME_BS = (gcnew System::Windows::Forms::Label());
 			this->button_BinarySearch = (gcnew System::Windows::Forms::Button());
 			this->listBox_BinarySearch = (gcnew System::Windows::Forms::ListBox());
+			this->textBox_BinarySearch = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label_BubbleSort = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -225,7 +231,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"新細明體", 10, System::Drawing::FontStyle::Bold));
-			this->label4->Location = System::Drawing::Point(379, 36);
+			this->label4->Location = System::Drawing::Point(382, 53);
 			this->label4->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(112, 14);
@@ -236,7 +242,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"新細明體", 10, System::Drawing::FontStyle::Bold));
-			this->label5->Location = System::Drawing::Point(591, 36);
+			this->label5->Location = System::Drawing::Point(563, 53);
 			this->label5->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(108, 14);
@@ -254,7 +260,6 @@ namespace CppCLRWinFormsProject {
 			this->checkBox_selfcheck->TabIndex = 13;
 			this->checkBox_selfcheck->Text = L"Self Check";
 			this->checkBox_selfcheck->UseVisualStyleBackColor = true;
-			this->checkBox_selfcheck->CheckedChanged += gcnew System::EventHandler(this, &Form1::checkBox_selfcheck_CheckedChanged);
 			// 
 			// label_error
 			// 
@@ -308,12 +313,14 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button_BinarySearch
 			// 
+			this->button_BinarySearch->Enabled = false;
 			this->button_BinarySearch->Location = System::Drawing::Point(907, 438);
 			this->button_BinarySearch->Name = L"button_BinarySearch";
-			this->button_BinarySearch->Size = System::Drawing::Size(143, 36);
+			this->button_BinarySearch->Size = System::Drawing::Size(230, 36);
 			this->button_BinarySearch->TabIndex = 19;
 			this->button_BinarySearch->Text = L"BinarySearch";
 			this->button_BinarySearch->UseVisualStyleBackColor = true;
+			this->button_BinarySearch->Click += gcnew System::EventHandler(this, &Form1::button_BinarySearch_Click);
 			// 
 			// listBox_BinarySearch
 			// 
@@ -321,14 +328,42 @@ namespace CppCLRWinFormsProject {
 			this->listBox_BinarySearch->ItemHeight = 16;
 			this->listBox_BinarySearch->Location = System::Drawing::Point(907, 94);
 			this->listBox_BinarySearch->Name = L"listBox_BinarySearch";
-			this->listBox_BinarySearch->Size = System::Drawing::Size(143, 324);
+			this->listBox_BinarySearch->Size = System::Drawing::Size(230, 324);
 			this->listBox_BinarySearch->TabIndex = 20;
+			// 
+			// textBox_BinarySearch
+			// 
+			this->textBox_BinarySearch->Location = System::Drawing::Point(993, 53);
+			this->textBox_BinarySearch->Name = L"textBox_BinarySearch";
+			this->textBox_BinarySearch->Size = System::Drawing::Size(98, 27);
+			this->textBox_BinarySearch->TabIndex = 21;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(914, 56);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(63, 16);
+			this->label3->TabIndex = 22;
+			this->label3->Text = L"Target = ";
+			// 
+			// label_BubbleSort
+			// 
+			this->label_BubbleSort->AutoSize = true;
+			this->label_BubbleSort->Location = System::Drawing::Point(755, 53);
+			this->label_BubbleSort->Name = L"label_BubbleSort";
+			this->label_BubbleSort->Size = System::Drawing::Size(77, 16);
+			this->label_BubbleSort->TabIndex = 23;
+			this->label_BubbleSort->Text = L"BubbleSort";
 			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1164, 549);
+			this->Controls->Add(this->label_BubbleSort);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->textBox_BinarySearch);
 			this->Controls->Add(this->listBox_BinarySearch);
 			this->Controls->Add(this->button_BinarySearch);
 			this->Controls->Add(this->label_CPUTIME_BS);
@@ -381,14 +416,14 @@ namespace CppCLRWinFormsProject {
 		//副程式(BubbleSort)
 		void BubbleSort(int list[], int n) {
 
-			int i,j, bigger = list[0], tmp = list[0];
+			int i, j, bigger = list[0], tmp = list[0];
 
-			for(int j = 0;j<n-1;j++){
-				for (int i = 0; i < n-j-1; i++) {
-					if (list[i] > list[i + 1]) {	
+			for (int j = 0;j < n - 1;j++) {
+				for (int i = 0; i < n - j - 1; i++) {
+					if (list[i] > list[i + 1]) {
 
 						bigger = list[i];
-						list[i] = list[i+1];
+						list[i] = list[i + 1];
 						list[i + 1] = bigger;
 
 					}
@@ -396,6 +431,33 @@ namespace CppCLRWinFormsProject {
 			}
 
 		}
+		//副程式(BinarySearch)
+		int BinarySearch(int list[], int right,int target) {
+			int left = 0, mid,i=0;
+
+			while (left <= right) {
+				listBox_BinarySearch->Items->Add("left = " + left  + ",right = " + right + ",迭代" + i + "次");
+				mid = (left + right) / 2;//取中間位子當基準
+				if (list[mid] == target) {
+
+					return mid;//找到的index值
+				}
+				else {
+
+					if (list[mid] < target) {//在右邊的數列
+
+						left = mid + 1;
+					}
+					else {//在左邊的數列
+
+						right = mid - 1;
+					}
+				}
+				i++;
+			}
+			return -1;//找不到時
+		}
+	
 
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
@@ -465,9 +527,35 @@ namespace CppCLRWinFormsProject {
 				listBox_BubbleSort->Items->Add("data[" + Convert::ToString(i) + "] = " + list_BubbleSort[i]);
 			}
 		}
+
+		button_BinarySearch->Enabled = true;
 	}
 
-private: System::Void checkBox_selfcheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void button_BinarySearch_Click(System::Object^ sender, System::EventArgs^ e) {
+		try {
+			//清除error訊息
+			listBox_BinarySearch->Items->Clear();
+			label_error->Text = "";
+
+			//check沒error
+			int n = Int32::Parse(textBox1->Text);
+			int target = Int32::Parse(textBox_BinarySearch->Text);
+			if (BinarySearch(list_BubbleSort,n, target) == -1) {
+
+				listBox_BinarySearch->Items->Add( "找不到"+ Convert::ToString(target) +"這個數字");
+			}
+			else {
+				listBox_BinarySearch->Items->Add("data[" + Convert::ToString(BinarySearch(list_BubbleSort,n, target)) + "] =  " + Convert::ToString(target));
+			}
+
+		}
+		catch(FormatException^){
+			listBox_BinarySearch->Items->Clear();
+			label_error->Text = "Target欄位請輸入整數!!";
+			listBox_BinarySearch->Items->Add("ERROR Target欄位請輸入整數!!");
+
+		}
+	}
+
 };
 }
