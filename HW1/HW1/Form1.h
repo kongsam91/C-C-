@@ -6,6 +6,7 @@
 int list[10000000]; //全域變數
 int list_BubbleSort[10000000]; //全域變數
 
+
 namespace CppCLRWinFormsProject {
 
 	using namespace System;
@@ -68,6 +69,18 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::ListBox^ listBox1;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::TabPage^ tabPage2;
+	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
+	private: System::Windows::Forms::Button^ button_Plot;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::TextBox^ textBox_Step;
+	private: System::Windows::Forms::TextBox^ textBox_FirstPoint;
+	private: System::Windows::Forms::TextBox^ textBox_StepTimes;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::ListBox^ listBox_Test;
+	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart2;
+
+
 
 
 
@@ -112,9 +125,14 @@ namespace CppCLRWinFormsProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->label_BubbleSort = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox_BinarySearch = (gcnew System::Windows::Forms::TextBox());
@@ -139,8 +157,22 @@ namespace CppCLRWinFormsProject {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->listBox_Test = (gcnew System::Windows::Forms::ListBox());
+			this->textBox_StepTimes = (gcnew System::Windows::Forms::TextBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->textBox_Step = (gcnew System::Windows::Forms::TextBox());
+			this->textBox_FirstPoint = (gcnew System::Windows::Forms::TextBox());
+			this->button_Plot = (gcnew System::Windows::Forms::Button());
+			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
+			this->tabPage2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -186,16 +218,6 @@ namespace CppCLRWinFormsProject {
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"tabPage1";
 			this->tabPage1->UseVisualStyleBackColor = true;
-			// 
-			// tabPage2
-			// 
-			this->tabPage2->Location = System::Drawing::Point(4, 26);
-			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(1154, 540);
-			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"tabPage2";
-			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
 			// label_BubbleSort
 			// 
@@ -439,11 +461,135 @@ namespace CppCLRWinFormsProject {
 			this->button1->Text = L"Data Generator";
 			this->button1->UseVisualStyleBackColor = true;
 			// 
+			// tabPage2
+			// 
+			this->tabPage2->Controls->Add(this->chart2);
+			this->tabPage2->Controls->Add(this->listBox_Test);
+			this->tabPage2->Controls->Add(this->textBox_StepTimes);
+			this->tabPage2->Controls->Add(this->label8);
+			this->tabPage2->Controls->Add(this->label7);
+			this->tabPage2->Controls->Add(this->label6);
+			this->tabPage2->Controls->Add(this->textBox_Step);
+			this->tabPage2->Controls->Add(this->textBox_FirstPoint);
+			this->tabPage2->Controls->Add(this->button_Plot);
+			this->tabPage2->Controls->Add(this->chart1);
+			this->tabPage2->Location = System::Drawing::Point(4, 26);
+			this->tabPage2->Name = L"tabPage2";
+			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage2->Size = System::Drawing::Size(1154, 540);
+			this->tabPage2->TabIndex = 1;
+			this->tabPage2->Text = L"tabPage2";
+			this->tabPage2->UseVisualStyleBackColor = true;
+			// 
+			// listBox_Test
+			// 
+			this->listBox_Test->FormattingEnabled = true;
+			this->listBox_Test->ItemHeight = 16;
+			this->listBox_Test->Location = System::Drawing::Point(6, 0);
+			this->listBox_Test->Name = L"listBox_Test";
+			this->listBox_Test->Size = System::Drawing::Size(198, 116);
+			this->listBox_Test->TabIndex = 9;
+			// 
+			// textBox_StepTimes
+			// 
+			this->textBox_StepTimes->Location = System::Drawing::Point(155, 229);
+			this->textBox_StepTimes->Name = L"textBox_StepTimes";
+			this->textBox_StepTimes->Size = System::Drawing::Size(89, 27);
+			this->textBox_StepTimes->TabIndex = 7;
+			this->textBox_StepTimes->Text = L"10";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(56, 229);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(82, 16);
+			this->label8->TabIndex = 6;
+			this->label8->Text = L"Step 次數 =";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(92, 183);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(46, 16);
+			this->label7->TabIndex = 5;
+			this->label7->Text = L"Step =";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(60, 137);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(78, 16);
+			this->label6->TabIndex = 4;
+			this->label6->Text = L"FirstPoint =";
+			// 
+			// textBox_Step
+			// 
+			this->textBox_Step->Location = System::Drawing::Point(155, 180);
+			this->textBox_Step->Name = L"textBox_Step";
+			this->textBox_Step->Size = System::Drawing::Size(89, 27);
+			this->textBox_Step->TabIndex = 3;
+			this->textBox_Step->Text = L"100";
+			this->textBox_Step->TextChanged += gcnew System::EventHandler(this, &Form1::textBox3_TextChanged);
+			// 
+			// textBox_FirstPoint
+			// 
+			this->textBox_FirstPoint->Location = System::Drawing::Point(155, 134);
+			this->textBox_FirstPoint->Name = L"textBox_FirstPoint";
+			this->textBox_FirstPoint->Size = System::Drawing::Size(89, 27);
+			this->textBox_FirstPoint->TabIndex = 2;
+			this->textBox_FirstPoint->Text = L"10";
+			this->textBox_FirstPoint->TextChanged += gcnew System::EventHandler(this, &Form1::textBox2_TextChanged);
+			// 
+			// button_Plot
+			// 
+			this->button_Plot->Location = System::Drawing::Point(59, 286);
+			this->button_Plot->Name = L"button_Plot";
+			this->button_Plot->Size = System::Drawing::Size(185, 42);
+			this->button_Plot->TabIndex = 1;
+			this->button_Plot->Text = L"Plot";
+			this->button_Plot->UseVisualStyleBackColor = true;
+			this->button_Plot->Click += gcnew System::EventHandler(this, &Form1::button_Plot_Click);
+			// 
+			// chart1
+			// 
+			chartArea2->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea2);
+			legend2->Name = L"Legend1";
+			this->chart1->Legends->Add(legend2);
+			this->chart1->Location = System::Drawing::Point(311, 6);
+			this->chart1->Name = L"chart1";
+			series2->ChartArea = L"ChartArea1";
+			series2->Legend = L"Legend1";
+			series2->Name = L"Series1";
+			this->chart1->Series->Add(series2);
+			this->chart1->Size = System::Drawing::Size(570, 239);
+			this->chart1->TabIndex = 0;
+			this->chart1->Text = L"chart1";
+			// 
+			// chart2
+			// 
+			chartArea1->Name = L"ChartArea1";
+			this->chart2->ChartAreas->Add(chartArea1);
+			legend1->Name = L"Legend1";
+			this->chart2->Legends->Add(legend1);
+			this->chart2->Location = System::Drawing::Point(311, 277);
+			this->chart2->Name = L"chart2";
+			series1->ChartArea = L"ChartArea1";
+			series1->Legend = L"Legend1";
+			series1->Name = L"Series1";
+			this->chart2->Series->Add(series1);
+			this->chart2->Size = System::Drawing::Size(570, 242);
+			this->chart2->TabIndex = 10;
+			this->chart2->Text = L"chart2";
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1164, 570);
+			this->ClientSize = System::Drawing::Size(1159, 570);
 			this->Controls->Add(this->tabControl1);
 			this->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
 			this->ImeMode = System::Windows::Forms::ImeMode::Off;
@@ -453,6 +599,10 @@ namespace CppCLRWinFormsProject {
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
+			this->tabPage2->ResumeLayout(false);
+			this->tabPage2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -519,6 +669,13 @@ namespace CppCLRWinFormsProject {
 			}
 			return -1;//找不到時
 		}
+
+		//副程式(反轉矩陣)
+		//void RevertList(int list[],int n) {
+			
+		//	revertlist
+
+		//}
 	
 
 #pragma endregion
@@ -617,6 +774,65 @@ namespace CppCLRWinFormsProject {
 			listBox_BinarySearch->Items->Add("ERROR Target欄位請輸入整數!!");
 
 		}
+	}
+	private: System::Void button_Plot_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+		try {
+
+
+			int n, step, start_point;
+			n = Int32::Parse(textBox_StepTimes->Text);
+			step = Int32::Parse(textBox_Step->Text);
+			start_point = Int32::Parse(textBox_FirstPoint->Text);
+
+			float Y1[20], Y2[20];
+			int X[20];
+			int list_Plot[100000];
+
+			clock_t t_begin_BS, t_end_BS; //for BubbleSort
+			clock_t t_begin_SS, t_end_SS; //for SelectionSort
+
+			String^ name1 = "Selection"; // String in VSC++
+			chart1->Series->Clear();
+			chart1->Series->Add(name1);
+
+			String^ name1 = "Selection"; // String in VSC++
+			chart1->Series->Clear();
+			chart1->Series->Add(name1);
+
+			for (int i=0; i < n; i++) {
+
+				X[i] = start_point + i * step; //每一輪的矩陣長度
+				listBox_Test->Items->Add(X[i]);
+				//產生一個從大排到小的矩陣,讓每個數字都需要排
+				for (int j = 0; j < X[i]; j++) {
+
+					list_Plot[j] = X[i] - j;
+										
+				}
+				
+				t_begin_BS = clock();
+				BubbleSort(list_Plot, X[i]);
+				t_end_BS = clock();
+
+				Y1[i] = (float)(t_end_BS - t_begin_BS) / CLOCKS_PER_SEC;
+				listBox_Test->Items->Add("X[i] = " + Convert::ToString(X[i])  + ",Y1[i] = " + Convert::ToString(Y1[i]));
+				chart1->Series[name1]->Points->AddXY(X[i], Y1[i]);
+
+			}
+
+		}
+		catch (FormatException^) {
+
+			listBox_Test->Items->Add("Error");
+		}
+
+		
+	}
+
+	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 
 };
