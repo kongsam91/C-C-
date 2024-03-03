@@ -125,12 +125,12 @@ namespace CppCLRWinFormsProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->label_BubbleSort = (gcnew System::Windows::Forms::Label());
@@ -158,6 +158,7 @@ namespace CppCLRWinFormsProject {
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->listBox_Test = (gcnew System::Windows::Forms::ListBox());
 			this->textBox_StepTimes = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
@@ -167,12 +168,11 @@ namespace CppCLRWinFormsProject {
 			this->textBox_FirstPoint = (gcnew System::Windows::Forms::TextBox());
 			this->button_Plot = (gcnew System::Windows::Forms::Button());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
-			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -480,6 +480,27 @@ namespace CppCLRWinFormsProject {
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"tabPage2";
 			this->tabPage2->UseVisualStyleBackColor = true;
+			this->tabPage2->Click += gcnew System::EventHandler(this, &Form1::tabPage2_Click);
+			// 
+			// chart2
+			// 
+			chartArea1->AxisX->IntervalAutoMode = System::Windows::Forms::DataVisualization::Charting::IntervalAutoMode::VariableCount;
+			chartArea1->AxisX->Maximum = 70000;
+			chartArea1->AxisX->Minimum = 0;
+			chartArea1->AxisX->Title = L"SelectionSort CPU Time";
+			chartArea1->Name = L"ChartArea1";
+			this->chart2->ChartAreas->Add(chartArea1);
+			legend1->Name = L"Legend1";
+			this->chart2->Legends->Add(legend1);
+			this->chart2->Location = System::Drawing::Point(311, 277);
+			this->chart2->Name = L"chart2";
+			series1->ChartArea = L"ChartArea1";
+			series1->Legend = L"Legend1";
+			series1->Name = L"Series1";
+			this->chart2->Series->Add(series1);
+			this->chart2->Size = System::Drawing::Size(728, 242);
+			this->chart2->TabIndex = 10;
+			this->chart2->Text = L"chart2";
 			// 
 			// listBox_Test
 			// 
@@ -496,7 +517,8 @@ namespace CppCLRWinFormsProject {
 			this->textBox_StepTimes->Name = L"textBox_StepTimes";
 			this->textBox_StepTimes->Size = System::Drawing::Size(89, 27);
 			this->textBox_StepTimes->TabIndex = 7;
-			this->textBox_StepTimes->Text = L"10";
+			this->textBox_StepTimes->Text = L"7";
+			this->textBox_StepTimes->TextChanged += gcnew System::EventHandler(this, &Form1::textBox_StepTimes_TextChanged);
 			// 
 			// label8
 			// 
@@ -531,7 +553,7 @@ namespace CppCLRWinFormsProject {
 			this->textBox_Step->Name = L"textBox_Step";
 			this->textBox_Step->Size = System::Drawing::Size(89, 27);
 			this->textBox_Step->TabIndex = 3;
-			this->textBox_Step->Text = L"100";
+			this->textBox_Step->Text = L"10000";
 			this->textBox_Step->TextChanged += gcnew System::EventHandler(this, &Form1::textBox3_TextChanged);
 			// 
 			// textBox_FirstPoint
@@ -540,7 +562,7 @@ namespace CppCLRWinFormsProject {
 			this->textBox_FirstPoint->Name = L"textBox_FirstPoint";
 			this->textBox_FirstPoint->Size = System::Drawing::Size(89, 27);
 			this->textBox_FirstPoint->TabIndex = 2;
-			this->textBox_FirstPoint->Text = L"10";
+			this->textBox_FirstPoint->Text = L"5000";
 			this->textBox_FirstPoint->TextChanged += gcnew System::EventHandler(this, &Form1::textBox2_TextChanged);
 			// 
 			// button_Plot
@@ -555,6 +577,9 @@ namespace CppCLRWinFormsProject {
 			// 
 			// chart1
 			// 
+			chartArea2->AxisX->Maximum = 70000;
+			chartArea2->AxisX->Minimum = 0;
+			chartArea2->AxisX->Title = L"BubbleSort CPU Time";
 			chartArea2->Name = L"ChartArea1";
 			this->chart1->ChartAreas->Add(chartArea2);
 			legend2->Name = L"Legend1";
@@ -565,25 +590,9 @@ namespace CppCLRWinFormsProject {
 			series2->Legend = L"Legend1";
 			series2->Name = L"Series1";
 			this->chart1->Series->Add(series2);
-			this->chart1->Size = System::Drawing::Size(570, 239);
+			this->chart1->Size = System::Drawing::Size(728, 239);
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"chart1";
-			// 
-			// chart2
-			// 
-			chartArea1->Name = L"ChartArea1";
-			this->chart2->ChartAreas->Add(chartArea1);
-			legend1->Name = L"Legend1";
-			this->chart2->Legends->Add(legend1);
-			this->chart2->Location = System::Drawing::Point(311, 277);
-			this->chart2->Name = L"chart2";
-			series1->ChartArea = L"ChartArea1";
-			series1->Legend = L"Legend1";
-			series1->Name = L"Series1";
-			this->chart2->Series->Add(series1);
-			this->chart2->Size = System::Drawing::Size(570, 242);
-			this->chart2->TabIndex = 10;
-			this->chart2->Text = L"chart2";
 			// 
 			// Form1
 			// 
@@ -601,8 +610,8 @@ namespace CppCLRWinFormsProject {
 			this->tabPage1->PerformLayout();
 			this->tabPage2->ResumeLayout(false);
 			this->tabPage2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -670,12 +679,16 @@ namespace CppCLRWinFormsProject {
 			return -1;//找不到時
 		}
 
-		//副程式(反轉矩陣)
-		//void RevertList(int list[],int n) {
-			
-		//	revertlist
+		//副程式(複製矩陣)
+		void CopyList(int list_1[], int list_2[],int n) {
 
-		//}
+			for (int i=0; i<n; i++) {
+
+				list_1[i] = list_2[i];
+
+			}
+
+		}
 	
 
 #pragma endregion
@@ -785,20 +798,20 @@ namespace CppCLRWinFormsProject {
 			step = Int32::Parse(textBox_Step->Text);
 			start_point = Int32::Parse(textBox_FirstPoint->Text);
 
-			float Y1[20], Y2[20];
-			int X[20];
-			int list_Plot[100000];
+			float Y1[100], Y2[100];
+			int X[100];
+			int list_Plot[100000],list_Plot_Copy[100000];
 
 			clock_t t_begin_BS, t_end_BS; //for BubbleSort
 			clock_t t_begin_SS, t_end_SS; //for SelectionSort
 
-			String^ name1 = "Selection"; // String in VSC++
+			String^ name1 = "BubbleSort"; // String in VSC++
 			chart1->Series->Clear();
 			chart1->Series->Add(name1);
 
-			String^ name1 = "Selection"; // String in VSC++
-			chart1->Series->Clear();
-			chart1->Series->Add(name1);
+			String^ name2 = "Selection"; // String in VSC++
+			chart2->Series->Clear();
+			chart2->Series->Add(name2);
 
 			for (int i=0; i < n; i++) {
 
@@ -808,16 +821,26 @@ namespace CppCLRWinFormsProject {
 				for (int j = 0; j < X[i]; j++) {
 
 					list_Plot[j] = X[i] - j;
-										
+
 				}
-				
+				CopyList(list_Plot, list_Plot_Copy, 100000);
+
 				t_begin_BS = clock();
 				BubbleSort(list_Plot, X[i]);
 				t_end_BS = clock();
 
+				t_begin_SS = clock();
+				SelectionSort(list_Plot_Copy, X[i]);
+				t_end_SS = clock();
+
 				Y1[i] = (float)(t_end_BS - t_begin_BS) / CLOCKS_PER_SEC;
-				listBox_Test->Items->Add("X[i] = " + Convert::ToString(X[i])  + ",Y1[i] = " + Convert::ToString(Y1[i]));
+				Y2[i] = (float)(t_end_SS - t_begin_SS) / CLOCKS_PER_SEC;
+
+				//listBox_Test->Items->Add("X[i] = " + Convert::ToString(X[i])  + ",Y1[i] = " + Convert::ToString(Y1[i]));
 				chart1->Series[name1]->Points->AddXY(X[i], Y1[i]);
+				chart1->ChartAreas[0]->AxisX->Minimum = 0; //設定X軸最小值
+				chart2->Series[name2]->Points->AddXY(X[i], Y2[i]);
+				chart2->ChartAreas[0]->AxisX->Minimum = 0; //設定X軸最小值
 
 			}
 
@@ -835,5 +858,9 @@ namespace CppCLRWinFormsProject {
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 
+private: System::Void tabPage2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox_StepTimes_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

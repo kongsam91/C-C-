@@ -1,23 +1,17 @@
 ﻿  CppCLR_WinFormsProject.cpp
-D:\Code\Data-Structure\HW1\HW1\Form1.h(588,11): warning C4101: 'j': 未參考的區域變數
+D:\Code\Data-Structure\HW1\HW1\Form1.h(621,11): warning C4101: 'j': 未參考的區域變數
   (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
   
-D:\Code\Data-Structure\HW1\HW1\Form1.h(588,8): warning C4101: 'i': 未參考的區域變數
+D:\Code\Data-Structure\HW1\HW1\Form1.h(621,8): warning C4101: 'i': 未參考的區域變數
   (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
   
-D:\Code\Data-Structure\HW1\HW1\Form1.h(607,11): warning C4101: 'j': 未參考的區域變數
+D:\Code\Data-Structure\HW1\HW1\Form1.h(640,11): warning C4101: 'j': 未參考的區域變數
   (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
   
-D:\Code\Data-Structure\HW1\HW1\Form1.h(607,8): warning C4101: 'i': 未參考的區域變數
+D:\Code\Data-Structure\HW1\HW1\Form1.h(640,8): warning C4101: 'i': 未參考的區域變數
   (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
   
-D:\Code\Data-Structure\HW1\HW1\Form1.h(671,14): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
-  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
-  
-D:\Code\Data-Structure\HW1\HW1\Form1.h(764,18): warning C4101: 'Y2': 未參考的區域變數
-  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
-  
-D:\Code\Data-Structure\HW1\HW1\Form1.h(766,8): warning C4101: 'i': 未參考的區域變數
+D:\Code\Data-Structure\HW1\HW1\Form1.h(708,14): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
   (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
   
   AssemblyInfo.obj : 發現 MSIL 模組。MSIL 的累加連結已停用。正在執行完整連結
