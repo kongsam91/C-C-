@@ -41,7 +41,11 @@ namespace CppCLRWinFormsProject {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TabControl^ tabControl1;
+	private: System::Windows::Forms::TabControl^ tab1;
+	protected:
+
+	protected:
+
 	protected:
 	private: System::Windows::Forms::TabPage^ tabPage1;
 	private: System::Windows::Forms::Label^ label_BubbleSort;
@@ -62,12 +66,15 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label_range;
 	private: System::Windows::Forms::TextBox^ textBox_range;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::ListBox^ listBox2;
+	private: System::Windows::Forms::Button^ button_SelectionSort;
+	private: System::Windows::Forms::ListBox^ listBox_SelectionSort;
+
+
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::ListBox^ listBox1;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button_DataGenerator;
+
 	private: System::Windows::Forms::TabPage^ tabPage2;
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
 	private: System::Windows::Forms::Button^ button_Plot;
@@ -79,6 +86,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::ListBox^ listBox_Test;
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart2;
+	private: System::Windows::Forms::TabPage^ tabPage3;
 
 
 
@@ -131,8 +139,10 @@ namespace CppCLRWinFormsProject {
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
+			this->tab1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->listBox_BubbleSort = (gcnew System::Windows::Forms::ListBox());
+			this->listBox_SelectionSort = (gcnew System::Windows::Forms::ListBox());
 			this->label_BubbleSort = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox_BinarySearch = (gcnew System::Windows::Forms::TextBox());
@@ -140,7 +150,6 @@ namespace CppCLRWinFormsProject {
 			this->button_BinarySearch = (gcnew System::Windows::Forms::Button());
 			this->label_CPUTIME_BS = (gcnew System::Windows::Forms::Label());
 			this->button_BubbleSort = (gcnew System::Windows::Forms::Button());
-			this->listBox_BubbleSort = (gcnew System::Windows::Forms::ListBox());
 			this->button_SelfCheck = (gcnew System::Windows::Forms::Button());
 			this->label_error = (gcnew System::Windows::Forms::Label());
 			this->checkBox_selfcheck = (gcnew System::Windows::Forms::CheckBox());
@@ -151,12 +160,11 @@ namespace CppCLRWinFormsProject {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label_range = (gcnew System::Windows::Forms::Label());
 			this->textBox_range = (gcnew System::Windows::Forms::TextBox());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
+			this->button_SelectionSort = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button_DataGenerator = (gcnew System::Windows::Forms::Button());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->listBox_Test = (gcnew System::Windows::Forms::ListBox());
@@ -168,25 +176,30 @@ namespace CppCLRWinFormsProject {
 			this->textBox_FirstPoint = (gcnew System::Windows::Forms::TextBox());
 			this->button_Plot = (gcnew System::Windows::Forms::Button());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
-			this->tabControl1->SuspendLayout();
+			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->tab1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// tabControl1
+			// tab1
 			// 
-			this->tabControl1->Controls->Add(this->tabPage1);
-			this->tabControl1->Controls->Add(this->tabPage2);
-			this->tabControl1->Location = System::Drawing::Point(4, 2);
-			this->tabControl1->Name = L"tabControl1";
-			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(1162, 570);
-			this->tabControl1->TabIndex = 0;
+			this->tab1->Controls->Add(this->tabPage1);
+			this->tab1->Controls->Add(this->tabPage2);
+			this->tab1->Controls->Add(this->tabPage3);
+			this->tab1->Location = System::Drawing::Point(4, 2);
+			this->tab1->Name = L"tab1";
+			this->tab1->SelectedIndex = 0;
+			this->tab1->ShowToolTips = true;
+			this->tab1->Size = System::Drawing::Size(1291, 570);
+			this->tab1->TabIndex = 0;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->listBox_BubbleSort);
+			this->tabPage1->Controls->Add(this->listBox_SelectionSort);
 			this->tabPage1->Controls->Add(this->label_BubbleSort);
 			this->tabPage1->Controls->Add(this->label3);
 			this->tabPage1->Controls->Add(this->textBox_BinarySearch);
@@ -194,7 +207,6 @@ namespace CppCLRWinFormsProject {
 			this->tabPage1->Controls->Add(this->button_BinarySearch);
 			this->tabPage1->Controls->Add(this->label_CPUTIME_BS);
 			this->tabPage1->Controls->Add(this->button_BubbleSort);
-			this->tabPage1->Controls->Add(this->listBox_BubbleSort);
 			this->tabPage1->Controls->Add(this->button_SelfCheck);
 			this->tabPage1->Controls->Add(this->label_error);
 			this->tabPage1->Controls->Add(this->checkBox_selfcheck);
@@ -205,33 +217,54 @@ namespace CppCLRWinFormsProject {
 			this->tabPage1->Controls->Add(this->label2);
 			this->tabPage1->Controls->Add(this->label_range);
 			this->tabPage1->Controls->Add(this->textBox_range);
-			this->tabPage1->Controls->Add(this->button2);
-			this->tabPage1->Controls->Add(this->listBox2);
+			this->tabPage1->Controls->Add(this->button_SelectionSort);
 			this->tabPage1->Controls->Add(this->textBox1);
 			this->tabPage1->Controls->Add(this->label1);
 			this->tabPage1->Controls->Add(this->listBox1);
-			this->tabPage1->Controls->Add(this->button1);
+			this->tabPage1->Controls->Add(this->button_DataGenerator);
 			this->tabPage1->Location = System::Drawing::Point(4, 26);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(1154, 540);
+			this->tabPage1->Size = System::Drawing::Size(1283, 540);
 			this->tabPage1->TabIndex = 0;
-			this->tabPage1->Text = L"tabPage1";
+			this->tabPage1->Text = L"Main";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// listBox_BubbleSort
+			// 
+			this->listBox_BubbleSort->FormattingEnabled = true;
+			this->listBox_BubbleSort->ItemHeight = 16;
+			this->listBox_BubbleSort->Location = System::Drawing::Point(790, 80);
+			this->listBox_BubbleSort->Name = L"listBox_BubbleSort";
+			this->listBox_BubbleSort->Size = System::Drawing::Size(232, 324);
+			this->listBox_BubbleSort->TabIndex = 40;
+			// 
+			// listBox_SelectionSort
+			// 
+			this->listBox_SelectionSort->FormattingEnabled = true;
+			this->listBox_SelectionSort->HorizontalScrollbar = true;
+			this->listBox_SelectionSort->ItemHeight = 16;
+			this->listBox_SelectionSort->Location = System::Drawing::Point(533, 80);
+			this->listBox_SelectionSort->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+			this->listBox_SelectionSort->Name = L"listBox_SelectionSort";
+			this->listBox_SelectionSort->Size = System::Drawing::Size(232, 324);
+			this->listBox_SelectionSort->TabIndex = 28;
 			// 
 			// label_BubbleSort
 			// 
 			this->label_BubbleSort->AutoSize = true;
-			this->label_BubbleSort->Location = System::Drawing::Point(737, 39);
+			this->label_BubbleSort->Font = (gcnew System::Drawing::Font(L"新細明體", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(136)));
+			this->label_BubbleSort->Location = System::Drawing::Point(854, 39);
 			this->label_BubbleSort->Name = L"label_BubbleSort";
-			this->label_BubbleSort->Size = System::Drawing::Size(77, 16);
+			this->label_BubbleSort->Size = System::Drawing::Size(87, 16);
 			this->label_BubbleSort->TabIndex = 47;
 			this->label_BubbleSort->Text = L"BubbleSort";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(896, 42);
+			this->label3->Location = System::Drawing::Point(1049, 42);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(63, 16);
 			this->label3->TabIndex = 46;
@@ -239,7 +272,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			// textBox_BinarySearch
 			// 
-			this->textBox_BinarySearch->Location = System::Drawing::Point(975, 39);
+			this->textBox_BinarySearch->Location = System::Drawing::Point(1128, 39);
 			this->textBox_BinarySearch->Name = L"textBox_BinarySearch";
 			this->textBox_BinarySearch->Size = System::Drawing::Size(98, 27);
 			this->textBox_BinarySearch->TabIndex = 45;
@@ -248,7 +281,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->listBox_BinarySearch->FormattingEnabled = true;
 			this->listBox_BinarySearch->ItemHeight = 16;
-			this->listBox_BinarySearch->Location = System::Drawing::Point(889, 80);
+			this->listBox_BinarySearch->Location = System::Drawing::Point(1042, 80);
 			this->listBox_BinarySearch->Name = L"listBox_BinarySearch";
 			this->listBox_BinarySearch->Size = System::Drawing::Size(230, 324);
 			this->listBox_BinarySearch->TabIndex = 44;
@@ -256,40 +289,35 @@ namespace CppCLRWinFormsProject {
 			// button_BinarySearch
 			// 
 			this->button_BinarySearch->Enabled = false;
-			this->button_BinarySearch->Location = System::Drawing::Point(889, 424);
+			this->button_BinarySearch->Location = System::Drawing::Point(1042, 424);
 			this->button_BinarySearch->Name = L"button_BinarySearch";
 			this->button_BinarySearch->Size = System::Drawing::Size(230, 36);
 			this->button_BinarySearch->TabIndex = 43;
 			this->button_BinarySearch->Text = L"BinarySearch";
 			this->button_BinarySearch->UseVisualStyleBackColor = true;
+			this->button_BinarySearch->Click += gcnew System::EventHandler(this, &Form1::button_BinarySearch_Click_1);
 			// 
 			// label_CPUTIME_BS
 			// 
 			this->label_CPUTIME_BS->AutoSize = true;
-			this->label_CPUTIME_BS->Location = System::Drawing::Point(710, 486);
+			this->label_CPUTIME_BS->Font = (gcnew System::Drawing::Font(L"微軟正黑體", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(136)));
+			this->label_CPUTIME_BS->Location = System::Drawing::Point(786, 486);
 			this->label_CPUTIME_BS->Name = L"label_CPUTIME_BS";
-			this->label_CPUTIME_BS->Size = System::Drawing::Size(83, 16);
+			this->label_CPUTIME_BS->Size = System::Drawing::Size(100, 20);
 			this->label_CPUTIME_BS->TabIndex = 42;
 			this->label_CPUTIME_BS->Text = L"CPU time = ";
 			// 
 			// button_BubbleSort
 			// 
 			this->button_BubbleSort->Enabled = false;
-			this->button_BubbleSort->Location = System::Drawing::Point(713, 424);
+			this->button_BubbleSort->Location = System::Drawing::Point(790, 427);
 			this->button_BubbleSort->Name = L"button_BubbleSort";
-			this->button_BubbleSort->Size = System::Drawing::Size(153, 39);
+			this->button_BubbleSort->Size = System::Drawing::Size(232, 39);
 			this->button_BubbleSort->TabIndex = 41;
 			this->button_BubbleSort->Text = L"BubbleSort";
 			this->button_BubbleSort->UseVisualStyleBackColor = true;
-			// 
-			// listBox_BubbleSort
-			// 
-			this->listBox_BubbleSort->FormattingEnabled = true;
-			this->listBox_BubbleSort->ItemHeight = 16;
-			this->listBox_BubbleSort->Location = System::Drawing::Point(713, 80);
-			this->listBox_BubbleSort->Name = L"listBox_BubbleSort";
-			this->listBox_BubbleSort->Size = System::Drawing::Size(153, 324);
-			this->listBox_BubbleSort->TabIndex = 40;
+			this->button_BubbleSort->Click += gcnew System::EventHandler(this, &Form1::button_BubbleSort_Click);
 			// 
 			// button_SelfCheck
 			// 
@@ -306,11 +334,12 @@ namespace CppCLRWinFormsProject {
 			this->label_error->BackColor = System::Drawing::SystemColors::Control;
 			this->label_error->Font = (gcnew System::Drawing::Font(L"新細明體", 12, System::Drawing::FontStyle::Bold));
 			this->label_error->ForeColor = System::Drawing::Color::Red;
-			this->label_error->Location = System::Drawing::Point(28, 444);
+			this->label_error->Location = System::Drawing::Point(63, 438);
 			this->label_error->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label_error->Name = L"label_error";
-			this->label_error->Size = System::Drawing::Size(0, 16);
+			this->label_error->Size = System::Drawing::Size(34, 16);
 			this->label_error->TabIndex = 38;
+			this->label_error->Text = L"123";
 			// 
 			// checkBox_selfcheck
 			// 
@@ -327,11 +356,11 @@ namespace CppCLRWinFormsProject {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"新細明體", 10, System::Drawing::FontStyle::Bold));
-			this->label5->Location = System::Drawing::Point(545, 39);
+			this->label5->Font = (gcnew System::Drawing::Font(L"新細明體", 12, System::Drawing::FontStyle::Bold));
+			this->label5->Location = System::Drawing::Point(588, 39);
 			this->label5->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(108, 14);
+			this->label5->Size = System::Drawing::Size(117, 16);
 			this->label5->TabIndex = 36;
 			this->label5->Text = L"Selectioin Sort ";
 			// 
@@ -339,7 +368,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"新細明體", 10, System::Drawing::FontStyle::Bold));
-			this->label4->Location = System::Drawing::Point(364, 39);
+			this->label4->Location = System::Drawing::Point(360, 39);
 			this->label4->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(112, 14);
@@ -349,11 +378,12 @@ namespace CppCLRWinFormsProject {
 			// label_CPUTIME_SS
 			// 
 			this->label_CPUTIME_SS->AutoSize = true;
-			this->label_CPUTIME_SS->Font = (gcnew System::Drawing::Font(L"微軟正黑體", 9, System::Drawing::FontStyle::Bold));
-			this->label_CPUTIME_SS->Location = System::Drawing::Point(557, 487);
+			this->label_CPUTIME_SS->Font = (gcnew System::Drawing::Font(L"微軟正黑體", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(136)));
+			this->label_CPUTIME_SS->Location = System::Drawing::Point(529, 486);
 			this->label_CPUTIME_SS->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->label_CPUTIME_SS->Name = L"label_CPUTIME_SS";
-			this->label_CPUTIME_SS->Size = System::Drawing::Size(76, 16);
+			this->label_CPUTIME_SS->Size = System::Drawing::Size(100, 20);
 			this->label_CPUTIME_SS->TabIndex = 34;
 			this->label_CPUTIME_SS->Text = L"CPU time = ";
 			// 
@@ -400,26 +430,17 @@ namespace CppCLRWinFormsProject {
 			this->textBox_range->Size = System::Drawing::Size(188, 27);
 			this->textBox_range->TabIndex = 30;
 			// 
-			// button2
+			// button_SelectionSort
 			// 
-			this->button2->Enabled = false;
-			this->button2->Location = System::Drawing::Point(528, 423);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(153, 39);
-			this->button2->TabIndex = 29;
-			this->button2->Text = L"排序";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// listBox2
-			// 
-			this->listBox2->FormattingEnabled = true;
-			this->listBox2->ItemHeight = 16;
-			this->listBox2->Location = System::Drawing::Point(528, 80);
-			this->listBox2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
-			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(153, 324);
-			this->listBox2->TabIndex = 28;
+			this->button_SelectionSort->Enabled = false;
+			this->button_SelectionSort->Location = System::Drawing::Point(533, 427);
+			this->button_SelectionSort->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+			this->button_SelectionSort->Name = L"button_SelectionSort";
+			this->button_SelectionSort->Size = System::Drawing::Size(220, 36);
+			this->button_SelectionSort->TabIndex = 29;
+			this->button_SelectionSort->Text = L"SelectionSort";
+			this->button_SelectionSort->UseVisualStyleBackColor = true;
+			this->button_SelectionSort->Click += gcnew System::EventHandler(this, &Form1::button_SelectionSort_Click_1);
 			// 
 			// textBox1
 			// 
@@ -445,21 +466,22 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->listBox1->FormattingEnabled = true;
 			this->listBox1->ItemHeight = 16;
-			this->listBox1->Location = System::Drawing::Point(350, 80);
+			this->listBox1->Location = System::Drawing::Point(346, 80);
 			this->listBox1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(153, 324);
 			this->listBox1->TabIndex = 25;
 			// 
-			// button1
+			// button_DataGenerator
 			// 
-			this->button1->Location = System::Drawing::Point(350, 423);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(153, 39);
-			this->button1->TabIndex = 24;
-			this->button1->Text = L"Data Generator";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button_DataGenerator->Location = System::Drawing::Point(346, 423);
+			this->button_DataGenerator->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+			this->button_DataGenerator->Name = L"button_DataGenerator";
+			this->button_DataGenerator->Size = System::Drawing::Size(153, 40);
+			this->button_DataGenerator->TabIndex = 24;
+			this->button_DataGenerator->Text = L"Data Generator";
+			this->button_DataGenerator->UseVisualStyleBackColor = true;
+			this->button_DataGenerator->Click += gcnew System::EventHandler(this, &Form1::button_DataGenerator_Click_1);
 			// 
 			// tabPage2
 			// 
@@ -476,11 +498,10 @@ namespace CppCLRWinFormsProject {
 			this->tabPage2->Location = System::Drawing::Point(4, 26);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(1154, 540);
+			this->tabPage2->Size = System::Drawing::Size(1283, 540);
 			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"tabPage2";
+			this->tabPage2->Text = L"Chart";
 			this->tabPage2->UseVisualStyleBackColor = true;
-			this->tabPage2->Click += gcnew System::EventHandler(this, &Form1::tabPage2_Click);
 			// 
 			// chart2
 			// 
@@ -506,7 +527,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->listBox_Test->FormattingEnabled = true;
 			this->listBox_Test->ItemHeight = 16;
-			this->listBox_Test->Location = System::Drawing::Point(6, 0);
+			this->listBox_Test->Location = System::Drawing::Point(46, 391);
 			this->listBox_Test->Name = L"listBox_Test";
 			this->listBox_Test->Size = System::Drawing::Size(198, 116);
 			this->listBox_Test->TabIndex = 9;
@@ -518,16 +539,15 @@ namespace CppCLRWinFormsProject {
 			this->textBox_StepTimes->Size = System::Drawing::Size(89, 27);
 			this->textBox_StepTimes->TabIndex = 7;
 			this->textBox_StepTimes->Text = L"7";
-			this->textBox_StepTimes->TextChanged += gcnew System::EventHandler(this, &Form1::textBox_StepTimes_TextChanged);
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(56, 229);
+			this->label8->Location = System::Drawing::Point(53, 229);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(82, 16);
+			this->label8->Size = System::Drawing::Size(85, 16);
 			this->label8->TabIndex = 6;
-			this->label8->Text = L"Step 次數 =";
+			this->label8->Text = L"repeatition =";
 			// 
 			// label7
 			// 
@@ -554,7 +574,6 @@ namespace CppCLRWinFormsProject {
 			this->textBox_Step->Size = System::Drawing::Size(89, 27);
 			this->textBox_Step->TabIndex = 3;
 			this->textBox_Step->Text = L"10000";
-			this->textBox_Step->TextChanged += gcnew System::EventHandler(this, &Form1::textBox3_TextChanged);
 			// 
 			// textBox_FirstPoint
 			// 
@@ -563,7 +582,6 @@ namespace CppCLRWinFormsProject {
 			this->textBox_FirstPoint->Size = System::Drawing::Size(89, 27);
 			this->textBox_FirstPoint->TabIndex = 2;
 			this->textBox_FirstPoint->Text = L"5000";
-			this->textBox_FirstPoint->TextChanged += gcnew System::EventHandler(this, &Form1::textBox2_TextChanged);
 			// 
 			// button_Plot
 			// 
@@ -594,18 +612,28 @@ namespace CppCLRWinFormsProject {
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"chart1";
 			// 
+			// tabPage3
+			// 
+			this->tabPage3->Location = System::Drawing::Point(4, 26);
+			this->tabPage3->Name = L"tabPage3";
+			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage3->Size = System::Drawing::Size(1283, 540);
+			this->tabPage3->TabIndex = 2;
+			this->tabPage3->Text = L"Compare";
+			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1159, 570);
-			this->Controls->Add(this->tabControl1);
+			this->ClientSize = System::Drawing::Size(1292, 572);
+			this->Controls->Add(this->tab1);
 			this->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
 			this->ImeMode = System::Windows::Forms::ImeMode::Off;
 			this->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->Name = L"Form1";
 			this->Text = L"Selection Sort v.s Bubble sort By Y.T Lin ver_0.2";
-			this->tabControl1->ResumeLayout(false);
+			this->tab1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
 			this->tabPage2->ResumeLayout(false);
@@ -692,8 +720,7 @@ namespace CppCLRWinFormsProject {
 	
 
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
-	{
+	private: System::Void button_DataGenerator_Click_1(System::Object^ sender, System::EventArgs^ e){
 		listBox1->Items->Clear();//每次產生新一輪變數時，會把上次結果清掉
 
 		//if (int::TryParse(textBox1->Text)) 判斷輸入是否正常
@@ -715,22 +742,22 @@ namespace CppCLRWinFormsProject {
 				}
 			}
 			//沒有數列前不能按排序Button
-			button2->Enabled = true; 
+			button_SelectionSort->Enabled = true;
 			button_BubbleSort->Enabled = true; 
 
 		}
 		catch (FormatException^)
 		{
 			// 如果無法將文字轉換成整數，跳Error
-			button2->Enabled = false;
+			button_SelectionSort->Enabled = false;
 			button_BubbleSort->Enabled = false;
 			label_error->Text = "ERROR 出現錯誤 請輸入整數";
 			label_error->ForeColor = Color::Red;
 
 		}
 	}
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		listBox2->Items->Clear();//每次產生新一輪變數時，會把上次結果清掉
+	private: System::Void button_SelectionSort_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		listBox_SelectionSort->Items->Clear();//每次產生新一輪變數時，會把上次結果清掉
 		clock_t t_begin, t_end;
 		t_begin = clock();
 		SelectionSort(list, int::Parse(textBox1->Text));
@@ -740,13 +767,13 @@ namespace CppCLRWinFormsProject {
 		for (int i = 0;i < int::Parse(textBox1->Text);i++)
 		{	
 			if (checkBox_PrintOutPut->Checked) {
-				listBox2->Items->Add("data[" + Convert::ToString(i) + "] = " + list[i]);
+				listBox_SelectionSort->Items->Add("data[" + Convert::ToString(i) + "] = " + list[i]);
 			}
 		}
 	}
 
 
-	private: System::Void button3_BubbleSort_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button_BubbleSort_Click(System::Object^ sender, System::EventArgs^ e) {
 		listBox_BubbleSort->Items->Clear();//每次產生新一輪變數時，會把上次結果清掉
 		clock_t t_begin, t_end;
 		t_begin = clock();
@@ -763,7 +790,7 @@ namespace CppCLRWinFormsProject {
 		button_BinarySearch->Enabled = true;
 	}
 
-	private: System::Void button_BinarySearch_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button_BinarySearch_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		try {
 			//清除error訊息
 			listBox_BinarySearch->Items->Clear();
@@ -800,31 +827,32 @@ namespace CppCLRWinFormsProject {
 
 			float Y1[100], Y2[100];
 			int X[100];
-			int list_Plot[100000],list_Plot_Copy[100000];
+			int list_Plot[1000],list_Plot_Copy[1000];
 
 			clock_t t_begin_BS, t_end_BS; //for BubbleSort
 			clock_t t_begin_SS, t_end_SS; //for SelectionSort
 
-			String^ name1 = "BubbleSort"; // String in VSC++
+			String^ name1 = "BubbleSort"; 
 			chart1->Series->Clear();
 			chart1->Series->Add(name1);
 
-			String^ name2 = "Selection"; // String in VSC++
+			String^ name2 = "Selection"; 
 			chart2->Series->Clear();
 			chart2->Series->Add(name2);
 
 			for (int i=0; i < n; i++) {
 
 				X[i] = start_point + i * step; //每一輪的矩陣長度
-				listBox_Test->Items->Add(X[i]);
+
 				//產生一個從大排到小的矩陣,讓每個數字都需要排
 				for (int j = 0; j < X[i]; j++) {
 
 					list_Plot[j] = X[i] - j;
-
+					
 				}
-				CopyList(list_Plot, list_Plot_Copy, 100000);
 
+				CopyList(list_Plot, list_Plot_Copy, 100000);
+				
 				t_begin_BS = clock();
 				BubbleSort(list_Plot, X[i]);
 				t_end_BS = clock();
@@ -836,7 +864,11 @@ namespace CppCLRWinFormsProject {
 				Y1[i] = (float)(t_end_BS - t_begin_BS) / CLOCKS_PER_SEC;
 				Y2[i] = (float)(t_end_SS - t_begin_SS) / CLOCKS_PER_SEC;
 
-				//listBox_Test->Items->Add("X[i] = " + Convert::ToString(X[i])  + ",Y1[i] = " + Convert::ToString(Y1[i]));
+				
+				listBox_BubbleSort->Items->Add("n = "+ X[i] +"BubbleSort takes" + Y1[i]);
+				listBox_SelectionSort->Items->Add("n = " + X[i] + "SelectionSort takes" + Y2[i]);
+				listBox1->Items->Add("n = " + X[i]);
+
 				chart1->Series[name1]->Points->AddXY(X[i], Y1[i]);
 				chart1->ChartAreas[0]->AxisX->Minimum = 0; //設定X軸最小值
 				chart2->Series[name2]->Points->AddXY(X[i], Y2[i]);
@@ -849,18 +881,7 @@ namespace CppCLRWinFormsProject {
 
 			listBox_Test->Items->Add("Error");
 		}
-
-		
 	}
 
-	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-
-private: System::Void tabPage2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox_StepTimes_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
 };
 }
