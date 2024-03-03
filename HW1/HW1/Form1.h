@@ -56,7 +56,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ label_CPUTIME_BS;
 	private: System::Windows::Forms::Button^ button_BubbleSort;
 	private: System::Windows::Forms::ListBox^ listBox_BubbleSort;
-	private: System::Windows::Forms::Button^ button_SelfCheck;
+
 	private: System::Windows::Forms::Label^ label_error;
 	private: System::Windows::Forms::CheckBox^ checkBox_selfcheck;
 	private: System::Windows::Forms::Label^ label5;
@@ -86,7 +86,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::ListBox^ listBox_Test;
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart2;
-	private: System::Windows::Forms::TabPage^ tabPage3;
+
 
 
 
@@ -133,12 +133,12 @@ namespace CppCLRWinFormsProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->tab1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->listBox_BubbleSort = (gcnew System::Windows::Forms::ListBox());
@@ -150,7 +150,6 @@ namespace CppCLRWinFormsProject {
 			this->button_BinarySearch = (gcnew System::Windows::Forms::Button());
 			this->label_CPUTIME_BS = (gcnew System::Windows::Forms::Label());
 			this->button_BubbleSort = (gcnew System::Windows::Forms::Button());
-			this->button_SelfCheck = (gcnew System::Windows::Forms::Button());
 			this->label_error = (gcnew System::Windows::Forms::Label());
 			this->checkBox_selfcheck = (gcnew System::Windows::Forms::CheckBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -176,7 +175,6 @@ namespace CppCLRWinFormsProject {
 			this->textBox_FirstPoint = (gcnew System::Windows::Forms::TextBox());
 			this->button_Plot = (gcnew System::Windows::Forms::Button());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
-			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->tab1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -188,7 +186,6 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->tab1->Controls->Add(this->tabPage1);
 			this->tab1->Controls->Add(this->tabPage2);
-			this->tab1->Controls->Add(this->tabPage3);
 			this->tab1->Location = System::Drawing::Point(4, 2);
 			this->tab1->Name = L"tab1";
 			this->tab1->SelectedIndex = 0;
@@ -207,7 +204,6 @@ namespace CppCLRWinFormsProject {
 			this->tabPage1->Controls->Add(this->button_BinarySearch);
 			this->tabPage1->Controls->Add(this->label_CPUTIME_BS);
 			this->tabPage1->Controls->Add(this->button_BubbleSort);
-			this->tabPage1->Controls->Add(this->button_SelfCheck);
 			this->tabPage1->Controls->Add(this->label_error);
 			this->tabPage1->Controls->Add(this->checkBox_selfcheck);
 			this->tabPage1->Controls->Add(this->label5);
@@ -319,33 +315,23 @@ namespace CppCLRWinFormsProject {
 			this->button_BubbleSort->UseVisualStyleBackColor = true;
 			this->button_BubbleSort->Click += gcnew System::EventHandler(this, &Form1::button_BubbleSort_Click);
 			// 
-			// button_SelfCheck
-			// 
-			this->button_SelfCheck->Location = System::Drawing::Point(66, 42);
-			this->button_SelfCheck->Name = L"button_SelfCheck";
-			this->button_SelfCheck->Size = System::Drawing::Size(150, 39);
-			this->button_SelfCheck->TabIndex = 39;
-			this->button_SelfCheck->Text = L"SelfCheck";
-			this->button_SelfCheck->UseVisualStyleBackColor = true;
-			// 
 			// label_error
 			// 
 			this->label_error->AutoSize = true;
 			this->label_error->BackColor = System::Drawing::SystemColors::Control;
 			this->label_error->Font = (gcnew System::Drawing::Font(L"新細明體", 12, System::Drawing::FontStyle::Bold));
 			this->label_error->ForeColor = System::Drawing::Color::Red;
-			this->label_error->Location = System::Drawing::Point(63, 438);
+			this->label_error->Location = System::Drawing::Point(14, 437);
 			this->label_error->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label_error->Name = L"label_error";
-			this->label_error->Size = System::Drawing::Size(34, 16);
+			this->label_error->Size = System::Drawing::Size(0, 16);
 			this->label_error->TabIndex = 38;
-			this->label_error->Text = L"123";
 			// 
 			// checkBox_selfcheck
 			// 
 			this->checkBox_selfcheck->AutoSize = true;
 			this->checkBox_selfcheck->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->checkBox_selfcheck->Location = System::Drawing::Point(78, 14);
+			this->checkBox_selfcheck->Location = System::Drawing::Point(107, 355);
 			this->checkBox_selfcheck->Margin = System::Windows::Forms::Padding(5);
 			this->checkBox_selfcheck->Name = L"checkBox_selfcheck";
 			this->checkBox_selfcheck->Size = System::Drawing::Size(94, 20);
@@ -505,20 +491,20 @@ namespace CppCLRWinFormsProject {
 			// 
 			// chart2
 			// 
-			chartArea1->AxisX->IntervalAutoMode = System::Windows::Forms::DataVisualization::Charting::IntervalAutoMode::VariableCount;
-			chartArea1->AxisX->Maximum = 70000;
-			chartArea1->AxisX->Minimum = 0;
-			chartArea1->AxisX->Title = L"SelectionSort CPU Time";
-			chartArea1->Name = L"ChartArea1";
-			this->chart2->ChartAreas->Add(chartArea1);
-			legend1->Name = L"Legend1";
-			this->chart2->Legends->Add(legend1);
+			chartArea3->AxisX->IntervalAutoMode = System::Windows::Forms::DataVisualization::Charting::IntervalAutoMode::VariableCount;
+			chartArea3->AxisX->Maximum = 70000;
+			chartArea3->AxisX->Minimum = 0;
+			chartArea3->AxisX->Title = L"SelectionSort CPU Time";
+			chartArea3->Name = L"ChartArea1";
+			this->chart2->ChartAreas->Add(chartArea3);
+			legend3->Name = L"Legend1";
+			this->chart2->Legends->Add(legend3);
 			this->chart2->Location = System::Drawing::Point(311, 277);
 			this->chart2->Name = L"chart2";
-			series1->ChartArea = L"ChartArea1";
-			series1->Legend = L"Legend1";
-			series1->Name = L"Series1";
-			this->chart2->Series->Add(series1);
+			series3->ChartArea = L"ChartArea1";
+			series3->Legend = L"Legend1";
+			series3->Name = L"Series1";
+			this->chart2->Series->Add(series3);
 			this->chart2->Size = System::Drawing::Size(728, 242);
 			this->chart2->TabIndex = 10;
 			this->chart2->Text = L"chart2";
@@ -595,32 +581,22 @@ namespace CppCLRWinFormsProject {
 			// 
 			// chart1
 			// 
-			chartArea2->AxisX->Maximum = 70000;
-			chartArea2->AxisX->Minimum = 0;
-			chartArea2->AxisX->Title = L"BubbleSort CPU Time";
-			chartArea2->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea2);
-			legend2->Name = L"Legend1";
-			this->chart1->Legends->Add(legend2);
+			chartArea4->AxisX->Maximum = 70000;
+			chartArea4->AxisX->Minimum = 0;
+			chartArea4->AxisX->Title = L"BubbleSort CPU Time";
+			chartArea4->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea4);
+			legend4->Name = L"Legend1";
+			this->chart1->Legends->Add(legend4);
 			this->chart1->Location = System::Drawing::Point(311, 6);
 			this->chart1->Name = L"chart1";
-			series2->ChartArea = L"ChartArea1";
-			series2->Legend = L"Legend1";
-			series2->Name = L"Series1";
-			this->chart1->Series->Add(series2);
+			series4->ChartArea = L"ChartArea1";
+			series4->Legend = L"Legend1";
+			series4->Name = L"Series1";
+			this->chart1->Series->Add(series4);
 			this->chart1->Size = System::Drawing::Size(728, 239);
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"chart1";
-			// 
-			// tabPage3
-			// 
-			this->tabPage3->Location = System::Drawing::Point(4, 26);
-			this->tabPage3->Name = L"tabPage3";
-			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage3->Size = System::Drawing::Size(1283, 540);
-			this->tabPage3->TabIndex = 2;
-			this->tabPage3->Text = L"Compare";
-			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
@@ -827,7 +803,7 @@ namespace CppCLRWinFormsProject {
 
 			float Y1[100], Y2[100];
 			int X[100];
-			int list_Plot[1000],list_Plot_Copy[1000];
+			int list_Plot[100000],list_Plot_Copy[100000];
 
 			clock_t t_begin_BS, t_end_BS; //for BubbleSort
 			clock_t t_begin_SS, t_end_SS; //for SelectionSort
@@ -879,9 +855,11 @@ namespace CppCLRWinFormsProject {
 		}
 		catch (FormatException^) {
 
-			listBox_Test->Items->Add("Error");
+			listBox_Test->Items->Add("Error 請輸入正整數!!!");
+
 		}
 	}
+
 
 };
 }
