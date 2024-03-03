@@ -61,6 +61,8 @@ namespace CppCLRWinFormsProject {
 
 	private: System::Windows::Forms::Button^ button_BubbleSort;
 	private: System::Windows::Forms::Label^ label_CPUTIME_BS;
+	private: System::Windows::Forms::Button^ button_BinarySearch;
+	private: System::Windows::Forms::ListBox^ listBox_BinarySearch;
 
 
 
@@ -98,14 +100,16 @@ namespace CppCLRWinFormsProject {
 			this->listBox_BubbleSort = (gcnew System::Windows::Forms::ListBox());
 			this->button_BubbleSort = (gcnew System::Windows::Forms::Button());
 			this->label_CPUTIME_BS = (gcnew System::Windows::Forms::Label());
+			this->button_BinarySearch = (gcnew System::Windows::Forms::Button());
+			this->listBox_BinarySearch = (gcnew System::Windows::Forms::ListBox());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(439, 685);
+			this->button1->Location = System::Drawing::Point(368, 437);
 			this->button1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(214, 69);
+			this->button1->Size = System::Drawing::Size(153, 39);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Data Generator";
 			this->button1->UseVisualStyleBackColor = true;
@@ -115,17 +119,17 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->listBox1->FormattingEnabled = true;
 			this->listBox1->ItemHeight = 16;
-			this->listBox1->Location = System::Drawing::Point(439, 229);
+			this->listBox1->Location = System::Drawing::Point(368, 94);
 			this->listBox1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(210, 420);
+			this->listBox1->Size = System::Drawing::Size(153, 324);
 			this->listBox1->TabIndex = 1;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->label1->Location = System::Drawing::Point(85, 371);
+			this->label1->Location = System::Drawing::Point(64, 233);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(31, 16);
@@ -135,7 +139,7 @@ namespace CppCLRWinFormsProject {
 			// textBox1
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->textBox1->Location = System::Drawing::Point(146, 365);
+			this->textBox1->Location = System::Drawing::Point(125, 227);
 			this->textBox1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(188, 27);
@@ -145,19 +149,19 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->listBox2->FormattingEnabled = true;
 			this->listBox2->ItemHeight = 16;
-			this->listBox2->Location = System::Drawing::Point(779, 229);
+			this->listBox2->Location = System::Drawing::Point(546, 94);
 			this->listBox2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(210, 420);
+			this->listBox2->Size = System::Drawing::Size(153, 324);
 			this->listBox2->TabIndex = 4;
 			// 
 			// button2
 			// 
 			this->button2->Enabled = false;
-			this->button2->Location = System::Drawing::Point(779, 685);
+			this->button2->Location = System::Drawing::Point(546, 437);
 			this->button2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(214, 69);
+			this->button2->Size = System::Drawing::Size(153, 39);
 			this->button2->TabIndex = 5;
 			this->button2->Text = L"排序";
 			this->button2->UseVisualStyleBackColor = true;
@@ -165,7 +169,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			// textBox_range
 			// 
-			this->textBox_range->Location = System::Drawing::Point(146, 453);
+			this->textBox_range->Location = System::Drawing::Point(125, 272);
 			this->textBox_range->Margin = System::Windows::Forms::Padding(5);
 			this->textBox_range->Name = L"textBox_range";
 			this->textBox_range->Size = System::Drawing::Size(188, 27);
@@ -175,7 +179,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->label_range->AutoSize = true;
 			this->label_range->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->label_range->Location = System::Drawing::Point(31, 453);
+			this->label_range->Location = System::Drawing::Point(32, 272);
 			this->label_range->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->label_range->Name = L"label_range";
 			this->label_range->Size = System::Drawing::Size(63, 16);
@@ -187,7 +191,7 @@ namespace CppCLRWinFormsProject {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"標楷體", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(136)));
-			this->label2->Location = System::Drawing::Point(164, 229);
+			this->label2->Location = System::Drawing::Point(172, 168);
 			this->label2->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(89, 20);
@@ -198,7 +202,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->checkBox_PrintOutPut->AutoSize = true;
 			this->checkBox_PrintOutPut->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->checkBox_PrintOutPut->Location = System::Drawing::Point(146, 536);
+			this->checkBox_PrintOutPut->Location = System::Drawing::Point(125, 324);
 			this->checkBox_PrintOutPut->Margin = System::Windows::Forms::Padding(5);
 			this->checkBox_PrintOutPut->Name = L"checkBox_PrintOutPut";
 			this->checkBox_PrintOutPut->Size = System::Drawing::Size(102, 20);
@@ -210,7 +214,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->label_CPUTIME_SS->AutoSize = true;
 			this->label_CPUTIME_SS->Font = (gcnew System::Drawing::Font(L"微軟正黑體", 9, System::Drawing::FontStyle::Bold));
-			this->label_CPUTIME_SS->Location = System::Drawing::Point(772, 777);
+			this->label_CPUTIME_SS->Location = System::Drawing::Point(575, 501);
 			this->label_CPUTIME_SS->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->label_CPUTIME_SS->Name = L"label_CPUTIME_SS";
 			this->label_CPUTIME_SS->Size = System::Drawing::Size(76, 16);
@@ -221,7 +225,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"新細明體", 10, System::Drawing::FontStyle::Bold));
-			this->label4->Location = System::Drawing::Point(450, 171);
+			this->label4->Location = System::Drawing::Point(379, 36);
 			this->label4->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(112, 14);
@@ -232,7 +236,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"新細明體", 10, System::Drawing::FontStyle::Bold));
-			this->label5->Location = System::Drawing::Point(809, 171);
+			this->label5->Location = System::Drawing::Point(591, 36);
 			this->label5->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(108, 14);
@@ -243,13 +247,14 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->checkBox_selfcheck->AutoSize = true;
 			this->checkBox_selfcheck->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->checkBox_selfcheck->Location = System::Drawing::Point(146, 608);
+			this->checkBox_selfcheck->Location = System::Drawing::Point(96, 28);
 			this->checkBox_selfcheck->Margin = System::Windows::Forms::Padding(5);
 			this->checkBox_selfcheck->Name = L"checkBox_selfcheck";
 			this->checkBox_selfcheck->Size = System::Drawing::Size(94, 20);
 			this->checkBox_selfcheck->TabIndex = 13;
 			this->checkBox_selfcheck->Text = L"Self Check";
 			this->checkBox_selfcheck->UseVisualStyleBackColor = true;
+			this->checkBox_selfcheck->CheckedChanged += gcnew System::EventHandler(this, &Form1::checkBox_selfcheck_CheckedChanged);
 			// 
 			// label_error
 			// 
@@ -257,7 +262,7 @@ namespace CppCLRWinFormsProject {
 			this->label_error->BackColor = System::Drawing::SystemColors::Control;
 			this->label_error->Font = (gcnew System::Drawing::Font(L"新細明體", 12, System::Drawing::FontStyle::Bold));
 			this->label_error->ForeColor = System::Drawing::Color::Red;
-			this->label_error->Location = System::Drawing::Point(85, 710);
+			this->label_error->Location = System::Drawing::Point(32, 448);
 			this->label_error->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label_error->Name = L"label_error";
 			this->label_error->Size = System::Drawing::Size(0, 16);
@@ -265,28 +270,28 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button_SelfCheck
 			// 
-			this->button_SelfCheck->Location = System::Drawing::Point(437, 821);
+			this->button_SelfCheck->Location = System::Drawing::Point(84, 56);
 			this->button_SelfCheck->Name = L"button_SelfCheck";
-			this->button_SelfCheck->Size = System::Drawing::Size(146, 42);
+			this->button_SelfCheck->Size = System::Drawing::Size(150, 39);
 			this->button_SelfCheck->TabIndex = 15;
-			this->button_SelfCheck->Text = L"button3";
+			this->button_SelfCheck->Text = L"SelfCheck";
 			this->button_SelfCheck->UseVisualStyleBackColor = true;
 			// 
 			// listBox_BubbleSort
 			// 
 			this->listBox_BubbleSort->FormattingEnabled = true;
 			this->listBox_BubbleSort->ItemHeight = 16;
-			this->listBox_BubbleSort->Location = System::Drawing::Point(1040, 232);
+			this->listBox_BubbleSort->Location = System::Drawing::Point(731, 94);
 			this->listBox_BubbleSort->Name = L"listBox_BubbleSort";
-			this->listBox_BubbleSort->Size = System::Drawing::Size(209, 420);
+			this->listBox_BubbleSort->Size = System::Drawing::Size(153, 324);
 			this->listBox_BubbleSort->TabIndex = 16;
 			// 
 			// button_BubbleSort
 			// 
 			this->button_BubbleSort->Enabled = false;
-			this->button_BubbleSort->Location = System::Drawing::Point(1057, 680);
+			this->button_BubbleSort->Location = System::Drawing::Point(731, 438);
 			this->button_BubbleSort->Name = L"button_BubbleSort";
-			this->button_BubbleSort->Size = System::Drawing::Size(178, 74);
+			this->button_BubbleSort->Size = System::Drawing::Size(153, 39);
 			this->button_BubbleSort->TabIndex = 17;
 			this->button_BubbleSort->Text = L"BubbleSort";
 			this->button_BubbleSort->UseVisualStyleBackColor = true;
@@ -295,17 +300,37 @@ namespace CppCLRWinFormsProject {
 			// label_CPUTIME_BS
 			// 
 			this->label_CPUTIME_BS->AutoSize = true;
-			this->label_CPUTIME_BS->Location = System::Drawing::Point(1120, 821);
+			this->label_CPUTIME_BS->Location = System::Drawing::Point(728, 500);
 			this->label_CPUTIME_BS->Name = L"label_CPUTIME_BS";
 			this->label_CPUTIME_BS->Size = System::Drawing::Size(83, 16);
 			this->label_CPUTIME_BS->TabIndex = 18;
 			this->label_CPUTIME_BS->Text = L"CPU time = ";
 			// 
+			// button_BinarySearch
+			// 
+			this->button_BinarySearch->Location = System::Drawing::Point(907, 438);
+			this->button_BinarySearch->Name = L"button_BinarySearch";
+			this->button_BinarySearch->Size = System::Drawing::Size(143, 36);
+			this->button_BinarySearch->TabIndex = 19;
+			this->button_BinarySearch->Text = L"BinarySearch";
+			this->button_BinarySearch->UseVisualStyleBackColor = true;
+			// 
+			// listBox_BinarySearch
+			// 
+			this->listBox_BinarySearch->FormattingEnabled = true;
+			this->listBox_BinarySearch->ItemHeight = 16;
+			this->listBox_BinarySearch->Location = System::Drawing::Point(907, 94);
+			this->listBox_BinarySearch->Name = L"listBox_BinarySearch";
+			this->listBox_BinarySearch->Size = System::Drawing::Size(143, 324);
+			this->listBox_BinarySearch->TabIndex = 20;
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1052, 703);
+			this->ClientSize = System::Drawing::Size(1164, 549);
+			this->Controls->Add(this->listBox_BinarySearch);
+			this->Controls->Add(this->button_BinarySearch);
 			this->Controls->Add(this->label_CPUTIME_BS);
 			this->Controls->Add(this->button_BubbleSort);
 			this->Controls->Add(this->listBox_BubbleSort);
@@ -441,5 +466,8 @@ namespace CppCLRWinFormsProject {
 			}
 		}
 	}
+
+private: System::Void checkBox_selfcheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
