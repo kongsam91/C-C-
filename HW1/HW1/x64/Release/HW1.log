@@ -1,17 +1,18 @@
 ﻿  CppCLR_WinFormsProject.cpp
-D:\Code\Data-Structure\HW1\HW1\Form1.h(343,73): error C2039: 'label_error_Click': 並非 'CppCLRWinFormsProject::Form1' 的成員
-  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
-  D:\Code\Data-Structure\HW1\HW1\Form1.h(22,19):
-  請參閱 'CppCLRWinFormsProject::Form1' 的宣告
-  
-D:\Code\Data-Structure\HW1\HW1\Form1.h(343,73): error C2065: 'label_error_Click': 未宣告的識別項
+D:\Code\Data-Structure\HW1\HW1\Form1.h(626,11): warning C4101: 'j': 未參考的區域變數
   (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
   
-D:\Code\Data-Structure\HW1\HW1\Form1.h(343,58): error C3924: 委派建構函式呼叫 'System::EventHandler' 的引數 #2 發生錯誤: 
-  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
-  D:\Code\Data-Structure\HW1\HW1\Form1.h(343,58):
-  必須是成員函式指標
-  
-D:\Code\Data-Structure\HW1\HW1\Form1.h(736,14): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
+D:\Code\Data-Structure\HW1\HW1\Form1.h(626,8): warning C4101: 'i': 未參考的區域變數
   (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
   
+D:\Code\Data-Structure\HW1\HW1\Form1.h(645,11): warning C4101: 'j': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+D:\Code\Data-Structure\HW1\HW1\Form1.h(645,8): warning C4101: 'i': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+D:\Code\Data-Structure\HW1\HW1\Form1.h(730,14): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+  AssemblyInfo.obj : 發現 MSIL 模組。MSIL 的累加連結已停用。正在執行完整連結
+  HW1.vcxproj -> D:\Code\Data-Structure\HW1\x64\Release\HW1.exe
