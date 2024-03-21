@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include <time.h> 
 #include <string> 
+#define MaxSize 21
 
 int list_SelectionSort[10000000]; //全域變數
 int list_BubbleSort[10000000]; //全域變數
@@ -730,9 +731,11 @@ namespace CppCLRWinFormsProject {
 			srand(time(NULL));
 			for (int i = 0;i < n;i++)
 			{
+				list_SelectionSort[i] = rand() % range + 1; //產生範圍從0到range到數列
+				list_BubbleSort[i] = list_SelectionSort[i]; //複製產生的亂數矩陣給BubbleSort用
+
 				if (checkBox_PrintOutPut->Checked) {
-					list_SelectionSort[i] = rand() % range + 1; //產生範圍從0到range到數列
-					list_BubbleSort[i] = list_SelectionSort[i]; //複製產生的亂數矩陣給BubbleSort用
+
 					listBox1->Items->Add("data[" + Convert::ToString(i) + "] = " + list_SelectionSort[i]);
 				}
 			}
