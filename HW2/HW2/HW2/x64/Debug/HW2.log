@@ -1,3 +1,16 @@
 ﻿  CppCLR_WinFormsProject.cpp
+D:\Code\Data-Structure\HW2\HW2\HW2\Form1.h(319,8): warning C4101: 'number': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+D:\Code\Data-Structure\HW2\HW2\HW2\Form1.h(319,16): warning C4101: 'n': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+D:\Code\Data-Structure\HW2\HW2\HW2\Form1.h(346,26): warning C4101: 'l': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+D:\Code\Data-Structure\HW2\HW2\HW2\Form1.h(346,15): warning C4101: 'n': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+D:\Code\Data-Structure\HW2\HW2\HW2\Form1.h(386,1): warning C4700: 使用了未初始化的區域變數 'k'
   AssemblyInfo.obj : 發現 MSIL 模組。MSIL 的累加連結已停用。正在執行完整連結
   HW2.vcxproj -> D:\Code\Data-Structure\HW2\HW2\x64\Debug\HW2.exe
