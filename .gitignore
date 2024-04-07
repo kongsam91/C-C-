@@ -1,5 +1,5 @@
-HW1/.vs/
-
+/HW1/.vs/*
+/Mouse_in_Maze/.vs/*
 
 # Prerequisites
 *.d

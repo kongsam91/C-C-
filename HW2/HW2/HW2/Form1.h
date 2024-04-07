@@ -3,6 +3,7 @@
 #include <time.h> 
 #include <string> 
 
+
 #define max_size 22
 int	square[max_size][max_size];
 int position_up = 1;
@@ -342,7 +343,7 @@ namespace CppCLRWinFormsProject {
 		}
 
 
-		void MagicSquare_odd(int size) {
+		void MagicSquare(int size) {
 			int number,n,i, j, k, l, data;
 			int tmp_i, tmp_j;
 
@@ -352,14 +353,13 @@ namespace CppCLRWinFormsProject {
 				listBox_Error->Items->Add("輸入範圍請注意");
 				return;
 
-			}else if((size % 4) == 0) {
+			}else if((size % 4) == 0 ) {
 
 				MagicSquare_4n(size);
 				listBox_Error->Items->Add("輸出為4n魔術方陣");
 				return;
 			}
 			else if ((size % 2) == 0 && (size % 4)!=0) {
-
 				listBox_Error->Items->Add("4n倍數的偶數才可以");
 				return;
 			}
@@ -580,7 +580,7 @@ namespace CppCLRWinFormsProject {
 
 		int size = int::Parse(textBox_size->Text);
 		//執行產生magicsquare矩陣的函式
-		MagicSquare_odd(size);
+		MagicSquare(size);
 		Check(size);
 		PrintMatrix(size + 1);
 		PrintMatrixGrid(size + 1);
