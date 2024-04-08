@@ -110,6 +110,7 @@ int top = -1;
 int d,SizeR,SizeC;
 
 
+
 namespace CppCLRWinFormsProject {
 	using namespace System::Runtime::InteropServices;
 
@@ -164,15 +165,20 @@ namespace CppCLRWinFormsProject {
 
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::TabPage^ tabPage3;
+
+
 	private: System::Windows::Forms::ListBox^ listBox_ErrorBox;
-	private: System::Windows::Forms::TabPage^ tabPage2;
-	private: System::Windows::Forms::ListBox^ listBox1;
-	private: System::Windows::Forms::TabPage^ tabPage1;
-	private: System::Windows::Forms::DataGridView^ dataGridView;
+
+
+
+
 	private: System::Windows::Forms::TabControl^ tabControl1;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
-	private: System::Windows::Forms::TabPage^ tabPage4;
+	private: System::Windows::Forms::TabPage^ tabPage1;
+	private: System::Windows::Forms::DataGridView^ dataGridView;
 	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+
+
 
 
 
@@ -202,21 +208,16 @@ namespace CppCLRWinFormsProject {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->listBox_ErrorBox = (gcnew System::Windows::Forms::ListBox());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->dataGridView = (gcnew System::Windows::Forms::DataGridView());
-			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
-			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->groupBox1->SuspendLayout();
 			this->tabPage3->SuspendLayout();
-			this->tabPage2->SuspendLayout();
+			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->BeginInit();
-			this->tabControl1->SuspendLayout();
-			this->tabPage4->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// groupBox1
@@ -226,39 +227,34 @@ namespace CppCLRWinFormsProject {
 			this->groupBox1->Controls->Add(this->label2);
 			this->groupBox1->Controls->Add(this->label1);
 			this->groupBox1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->groupBox1->Location = System::Drawing::Point(30, 108);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(2);
+			this->groupBox1->Location = System::Drawing::Point(45, 162);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox1->Size = System::Drawing::Size(164, 105);
+			this->groupBox1->Size = System::Drawing::Size(25, 15);
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
 			// 
 			// textBox_Width
 			// 
-			this->textBox_Width->Location = System::Drawing::Point(74, 70);
-			this->textBox_Width->Margin = System::Windows::Forms::Padding(2);
+			this->textBox_Width->Location = System::Drawing::Point(111, 105);
 			this->textBox_Width->Name = L"textBox_Width";
-			this->textBox_Width->Size = System::Drawing::Size(76, 22);
+			this->textBox_Width->Size = System::Drawing::Size(112, 29);
 			this->textBox_Width->TabIndex = 3;
 			this->textBox_Width->Text = L"10";
 			// 
 			// textBox_Height
 			// 
-			this->textBox_Height->Location = System::Drawing::Point(74, 31);
-			this->textBox_Height->Margin = System::Windows::Forms::Padding(2);
+			this->textBox_Height->Location = System::Drawing::Point(111, 46);
 			this->textBox_Height->Name = L"textBox_Height";
-			this->textBox_Height->Size = System::Drawing::Size(76, 22);
+			this->textBox_Height->Size = System::Drawing::Size(112, 29);
 			this->textBox_Height->TabIndex = 2;
 			this->textBox_Height->Text = L"10";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(17, 72);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(26, 108);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(43, 12);
+			this->label2->Size = System::Drawing::Size(65, 18);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Width =";
 			this->label2->Click += gcnew System::EventHandler(this, &Form1::label2_Click);
@@ -266,19 +262,17 @@ namespace CppCLRWinFormsProject {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(17, 35);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(26, 52);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(45, 12);
+			this->label1->Size = System::Drawing::Size(69, 18);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Height =";
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(39, 234);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->Location = System::Drawing::Point(58, 351);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(140, 27);
+			this->button1->Size = System::Drawing::Size(210, 40);
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Generate Maze";
 			this->button1->UseVisualStyleBackColor = true;
@@ -286,30 +280,27 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button_TxtRead
 			// 
-			this->button_TxtRead->Location = System::Drawing::Point(30, 82);
-			this->button_TxtRead->Margin = System::Windows::Forms::Padding(2);
+			this->button_TxtRead->Location = System::Drawing::Point(45, 123);
 			this->button_TxtRead->Name = L"button_TxtRead";
-			this->button_TxtRead->Size = System::Drawing::Size(77, 21);
+			this->button_TxtRead->Size = System::Drawing::Size(13, 12);
 			this->button_TxtRead->TabIndex = 2;
 			this->button_TxtRead->Text = L"txt Read";
 			this->button_TxtRead->UseVisualStyleBackColor = true;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(39, 317);
-			this->button2->Margin = System::Windows::Forms::Padding(2);
+			this->button2->Location = System::Drawing::Point(1142, 56);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(140, 28);
+			this->button2->Size = System::Drawing::Size(10, 10);
 			this->button2->TabIndex = 3;
 			this->button2->Text = L"Depth First Search";
 			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(39, 279);
-			this->button3->Margin = System::Windows::Forms::Padding(2);
+			this->button3->Location = System::Drawing::Point(1142, 28);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(137, 26);
+			this->button3->Size = System::Drawing::Size(10, 10);
 			this->button3->TabIndex = 0;
 			this->button3->Text = L"Maze To Txt";
 			this->button3->UseVisualStyleBackColor = true;
@@ -317,156 +308,87 @@ namespace CppCLRWinFormsProject {
 			// tabPage3
 			// 
 			this->tabPage3->Controls->Add(this->listBox_ErrorBox);
-			this->tabPage3->Location = System::Drawing::Point(4, 22);
-			this->tabPage3->Margin = System::Windows::Forms::Padding(2);
+			this->tabPage3->Location = System::Drawing::Point(4, 28);
 			this->tabPage3->Name = L"tabPage3";
-			this->tabPage3->Padding = System::Windows::Forms::Padding(2);
-			this->tabPage3->Size = System::Drawing::Size(506, 412);
+			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage3->Size = System::Drawing::Size(763, 625);
 			this->tabPage3->TabIndex = 2;
-			this->tabPage3->Text = L"tabPage3";
+			this->tabPage3->Text = L"Process";
 			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
 			// listBox_ErrorBox
 			// 
 			this->listBox_ErrorBox->FormattingEnabled = true;
-			this->listBox_ErrorBox->ItemHeight = 12;
-			this->listBox_ErrorBox->Location = System::Drawing::Point(4, 2);
-			this->listBox_ErrorBox->Margin = System::Windows::Forms::Padding(2);
+			this->listBox_ErrorBox->ItemHeight = 18;
+			this->listBox_ErrorBox->Location = System::Drawing::Point(6, 5);
 			this->listBox_ErrorBox->Name = L"listBox_ErrorBox";
-			this->listBox_ErrorBox->Size = System::Drawing::Size(503, 412);
+			this->listBox_ErrorBox->Size = System::Drawing::Size(752, 598);
 			this->listBox_ErrorBox->TabIndex = 6;
 			// 
-			// tabPage2
+			// tabControl1
 			// 
-			this->tabPage2->Controls->Add(this->listBox1);
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
-			this->tabPage2->Margin = System::Windows::Forms::Padding(2);
-			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(2);
-			this->tabPage2->Size = System::Drawing::Size(506, 412);
-			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"tabPage2";
-			this->tabPage2->UseVisualStyleBackColor = true;
-			// 
-			// listBox1
-			// 
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 12;
-			this->listBox1->Location = System::Drawing::Point(4, 6);
-			this->listBox1->Margin = System::Windows::Forms::Padding(2);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(503, 412);
-			this->listBox1->TabIndex = 0;
+			this->tabControl1->Controls->Add(this->tabPage1);
+			this->tabControl1->Controls->Add(this->tabPage3);
+			this->tabControl1->Location = System::Drawing::Point(321, 39);
+			this->tabControl1->Name = L"tabControl1";
+			this->tabControl1->SelectedIndex = 0;
+			this->tabControl1->Size = System::Drawing::Size(771, 657);
+			this->tabControl1->TabIndex = 4;
 			// 
 			// tabPage1
 			// 
 			this->tabPage1->Controls->Add(this->dataGridView);
-			this->tabPage1->Location = System::Drawing::Point(4, 22);
-			this->tabPage1->Margin = System::Windows::Forms::Padding(2);
+			this->tabPage1->Location = System::Drawing::Point(4, 28);
 			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(2);
-			this->tabPage1->Size = System::Drawing::Size(506, 412);
+			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage1->Size = System::Drawing::Size(763, 625);
 			this->tabPage1->TabIndex = 0;
-			this->tabPage1->Text = L"tabPage1";
+			this->tabPage1->Text = L"GridView";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
 			// dataGridView
 			// 
 			this->dataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView->Location = System::Drawing::Point(2, 0);
-			this->dataGridView->Margin = System::Windows::Forms::Padding(2);
+			this->dataGridView->Location = System::Drawing::Point(0, 3);
 			this->dataGridView->Name = L"dataGridView";
 			this->dataGridView->RowHeadersWidth = 51;
 			this->dataGridView->RowTemplate->Height = 27;
-			this->dataGridView->Size = System::Drawing::Size(509, 418);
+			this->dataGridView->Size = System::Drawing::Size(767, 624);
 			this->dataGridView->TabIndex = 0;
-			// 
-			// tabControl1
-			// 
-			this->tabControl1->Controls->Add(this->tabPage1);
-			this->tabControl1->Controls->Add(this->tabPage2);
-			this->tabControl1->Controls->Add(this->tabPage3);
-			this->tabControl1->Controls->Add(this->tabPage4);
-			this->tabControl1->Location = System::Drawing::Point(214, 26);
-			this->tabControl1->Margin = System::Windows::Forms::Padding(2);
-			this->tabControl1->Name = L"tabControl1";
-			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(514, 438);
-			this->tabControl1->TabIndex = 4;
 			// 
 			// openFileDialog1
 			// 
 			this->openFileDialog1->FileName = L"openFileDialog1";
 			// 
-			// tabPage4
-			// 
-			this->tabPage4->Controls->Add(this->richTextBox1);
-			this->tabPage4->Location = System::Drawing::Point(4, 22);
-			this->tabPage4->Name = L"tabPage4";
-			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage4->Size = System::Drawing::Size(506, 412);
-			this->tabPage4->TabIndex = 3;
-			this->tabPage4->Text = L"tabPage4";
-			this->tabPage4->UseVisualStyleBackColor = true;
-			// 
 			// richTextBox1
 			// 
-			this->richTextBox1->Location = System::Drawing::Point(7, 9);
+			this->richTextBox1->Location = System::Drawing::Point(62, 146);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(480, 335);
-			this->richTextBox1->TabIndex = 0;
+			this->richTextBox1->Size = System::Drawing::Size(205, 141);
+			this->richTextBox1->TabIndex = 5;
 			this->richTextBox1->Text = L"";
 			// 
 			// Form1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 18);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(776, 484);
+			this->ClientSize = System::Drawing::Size(1164, 726);
+			this->Controls->Add(this->richTextBox1);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->tabControl1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button_TxtRead);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Form1";
 			this->Text = L"Form1";
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->tabPage3->ResumeLayout(false);
-			this->tabPage2->ResumeLayout(false);
+			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->EndInit();
-			this->tabControl1->ResumeLayout(false);
-			this->tabPage4->ResumeLayout(false);
 			this->ResumeLayout(false);
-
-		}
-
-		// stack的操作
-		void push(struct position element) {
-
-			if (IsFull()) {
-				//StackFull();
-			}
-			else {
-				stack[++top] = element;
-			}
-		}
-		// stack的操作
-		struct position pop() {
-
-			if (IsEmpty()) {
-				//StackEmpty();
-				position emptypostion;
-				emptypostion.x = -1;
-				emptypostion.y = -1;
-
-				return  emptypostion; //定義pop() 回傳-1 表示stack已是空
-			}
-			else {
-				return stack[top--];
-			}
 
 		}
 
@@ -482,6 +404,36 @@ namespace CppCLRWinFormsProject {
 			else return 0;
 
 		}
+		// stack的操作
+		void push(struct position element) {
+
+			if (IsFull()) {
+				//StackFull();
+			}
+			else {
+				stack[++top] = element;
+				//top++;
+			}
+		}
+		// stack的操作
+		struct position pop() {
+
+			if (IsEmpty()) {
+				//StackEmpty();
+				position emptypostion;
+				emptypostion.x = -1;
+				emptypostion.y = -1;
+
+				return  emptypostion; //定義pop() 回傳-1 表示stack已是空
+			}
+			else {
+				listBox_ErrorBox->Items->Add("top_stack = " + top);
+				return stack[top--];
+
+			}
+
+		}
+
 
 		void GenerateMaze(int m,int p) {
 			m = m + 2;
@@ -558,10 +510,10 @@ namespace CppCLRWinFormsProject {
 			PrintMatrixText(m, p);
 			PrintMatrixGrid(m, p);
 			//release動態矩陣記憶體
-			for (int i = 0;i < m;i++) {
-				delete[] w[i];
-			}
-			delete[] w;
+			//for (int i = 0;i < m;i++) {
+			//	delete[] w[i];
+			//}
+			//delete[] w;
 			
 		}
 		//print Maze use text
@@ -575,7 +527,7 @@ namespace CppCLRWinFormsProject {
 				int blank_len = 0;
 
 				for (int j = 0; j < p; j++) {
-					data_str = Convert::ToString(w[i][j]);
+					data_str = Convert::ToString(mark[i][j]);
 
 					blank_len = block_len - data_str->Length;
 
@@ -671,15 +623,23 @@ namespace CppCLRWinFormsProject {
 				
 				//產生記錄走過的
 				mark = new int* [m];
+
 				for (i = 0; i < m; i++){
 
 					mark[i] = new int[p];
 
 				}
+				ww = new int* [m];
 
 				for (i = 0; i < m; i++) {
 
-					for (j = 0; i < p; i++) {
+					ww[i] = new int[p];
+
+				}
+
+				for (int i = 0; i < m; i++) {
+
+					for (int j = 0; j < p; j++) {
 
 						mark[i][j] = 0;
 
@@ -722,7 +682,7 @@ namespace CppCLRWinFormsProject {
 			int rowheight = dataGridView->Height / (dataGridView->RowCount);
 
 			//調整欄高
-			for (int i;i < m;i++) {
+			for (int i =0 ;i < m;i++) {
 				dataGridView->Rows[i]->Height = rowheight;
 			}
 			//值到表格
@@ -736,73 +696,136 @@ namespace CppCLRWinFormsProject {
 
 				}
 			}
+			for (int i = 0; i < m; i++)
 
+			{
+				for (int j = 0; j < p; j++)
+
+				{
+					 ww[i][j] = w[i][j];
+
+				}
+			}
 			//上色
 			for (i = 0; i < m; i++){   
 
-				for (j = 0; j < p; j++)
+				for (j = 0; j < p; j++) {
 
-				{
-					if (w[i][j] == 2)
+					if (w[i][j] == 2) {
 
 						dataGridView->Rows[i]->Cells[j]->Style->BackColor = Color::Olive; // Beige; //IndianRed;
 
-					else
+					}
+					else if(w[i][j] == 1) {
 
 						// dataGridView1->Rows[i]->Cells[j]->Value =  maze[i][j];
+						dataGridView->Rows[i]->Cells[j]->Style->BackColor = Color::DarkKhaki; //LightGray              else dataGridView1->Rows[i]->Cells[j]->Style->BackColor = Color::Ivory; //象牙色;
 
-						if (w[i][j] == 1)
-
-							dataGridView->Rows[i]->Cells[j]->Style->BackColor = Color::DarkKhaki; //LightGray              else dataGridView1->Rows[i]->Cells[j]->Style->BackColor = Color::Ivory; //象牙色;
-
+					}
 				}
 
 			}
-
-			//回收動態矩陣
-			for (i = 0; i < m; i++)
-
-			{
-				delete w[i];
-
-			}
-
-			delete [] w ;
-
+			
 		}
 		void GoMaze() {
 			struct offset move[possible_directions] = {
-					{-1, 0},    // N
-					{-1, 1},    // NE
-					{0, 1},     // E
-					{1, 1},     // SE
-					{1, 0},     // S
-					{1, -1},    // SW
-					{0, -1},    // W
-					{-1, -1}    // NW
+					{-1, 0},    // N 0
+					{-1, 1},    // NE 1
+					{0, 1},     // E 2
+					{1, 1},     // SE 3
+					{1, 0},     // S 4
+					{1, -1},    // SW 5
+					{0, -1},    // W 6
+					{-1, -1}    // NW 7
 			};
-			int i, j, dir;
-			int m = SizeR, p=SizeC;
-			step.x = 1;step.y = 1;step.dir = E;
 
+			int i, j, dir,status=0;
+			int m = SizeR - 2, p = SizeC - 2; //出口
+			step.x = 1;step.y = 1; //入口
+			step.dir = directions(0);
+			mark[step.x][step.y] = 1;
 			push(step);
+			listBox_ErrorBox->Items->Add("m,p = " + m + "," + p);
 			while (top != -1) {
-				pop();
-				i = step.x; j = step.y; dir = step.dir;
 
+				step = pop();
+				
+				i = step.x; j = step.y; dir = step.dir;
+				dir = 0;
+
+				listBox_ErrorBox->Items->Add("top = " + top);
+				listBox_ErrorBox->Items->Add("pop = (" + Convert::ToString(i) + "," + Convert::ToString(j) + "," + Convert::ToString(dir) + ")");
+				
 				while (dir <= 7) {
-					int u = step.x + move[d].dx;int v = step.y + move[d].dy;
-						if (w[u][v] == 0 && mark[u][v] ) {
+					listBox_ErrorBox->Items->Add("dir = " + dir);
+					int u = i+ move[dir].dx;
+					int v = j+ move[dir].dy;
+					listBox_ErrorBox->Items->Add(u + "," + v);
+					if (u < 0 || v < 0) {
+
+						dir++;
+						continue;
 
 					}
+					if (ww[u][v] == 0 && mark[u][v] == 0) {
+						//如果到出口了
+
+						if ((u == m) && (v == p)) {
+
+							mark[u][v] = 1;
+							listBox_ErrorBox->Items->Add("出口找到了");
+							status = 1;
+							
+							break;
+						}
+
+						mark[u][v] = 1;
+						step.x = u; step.y = v;
+						//step.dir = static_cast<directions>(dir);
+						step.dir = directions(dir);
+						i = u;j = v;
+						listBox_ErrorBox->Items->Add("step = (" + Convert::ToString(step.x) + "," + Convert::ToString(step.y) + "," + Convert::ToString(dir) + ")");
+						listBox_ErrorBox->Items->Add("------------------------");
+						push(step);
+						dir = 0;
+						continue;
+
+					}
+					else dir++;
 
 				}
+				//break;
 
-				
+				if (status == 1) break; {
+
+				}
 			}
-		
-		};
+			if (status == 0)  listBox_ErrorBox->Items->Add("迷宮無解"); 
+			
+			//上色mark
+			for (int a = 0; a < SizeR; a++) {
 
+				for (int b = 0; b < SizeC; b++) {
+
+					if (mark[a][b] == 1) {
+
+						dataGridView->Rows[a]->Cells[b]->Style->BackColor = Color::Cyan;
+
+					}
+				}
+
+			}
+			PrintMatrixText(m+2, p+2);
+			
+			for (int i = 0; i < SizeR; i++) {
+
+				delete mark[i];
+				delete ww[i];
+
+			}
+			delete[] mark;
+			delete[] ww;
+		}
 #pragma endregion
 	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -811,10 +834,9 @@ namespace CppCLRWinFormsProject {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		m = int::Parse(textBox_Height->Text);
 		p = int::Parse(textBox_Width->Text);
-		//listBox_ErrorBox->Items->Add(Convert::ToString(m) + "," + Convert::ToString(p));
-		//GenerateMaze(m,p);
 		ReadTxt();
 		GoMaze();
+
 	}
 };
 }
