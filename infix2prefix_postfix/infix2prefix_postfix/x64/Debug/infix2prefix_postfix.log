@@ -1,6 +1,9 @@
 ﻿  CppCLR_WinFormsProject.cpp
-D:\Code\Data-Structure\infix2prefix_postfix\infix2prefix_postfix\Form1.h(173,1): warning C4715: 'CppCLRWinFormsProject::Form1::pop': 不是所有控制路徑都傳回值
-D:\Code\Data-Structure\infix2prefix_postfix\infix2prefix_postfix\Form1.h(227,1): warning C4715: 'CppCLRWinFormsProject::Form1::q': 不是所有控制路徑都傳回值
-D:\Code\Data-Structure\infix2prefix_postfix\infix2prefix_postfix\Form1.h(234,1): warning C4715: 'CppCLRWinFormsProject::Form1::p': 不是所有控制路徑都傳回值
+D:\Code\Data-Structure\infix2prefix_postfix\infix2prefix_postfix\Form1.h(237,12): warning C4101: 'prefix': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+D:\Code\Data-Structure\infix2prefix_postfix\infix2prefix_postfix\Form1.h(186,1): warning C4715: 'CppCLRWinFormsProject::Form1::pop': 不是所有控制路徑都傳回值
+D:\Code\Data-Structure\infix2prefix_postfix\infix2prefix_postfix\Form1.h(280,1): warning C4715: 'CppCLRWinFormsProject::Form1::q': 不是所有控制路徑都傳回值
+D:\Code\Data-Structure\infix2prefix_postfix\infix2prefix_postfix\Form1.h(287,1): warning C4715: 'CppCLRWinFormsProject::Form1::p': 不是所有控制路徑都傳回值
   AssemblyInfo.obj : 發現 MSIL 模組。MSIL 的累加連結已停用。正在執行完整連結
   infix2prefix_postfix.vcxproj -> D:\Code\Data-Structure\infix2prefix_postfix\x64\Debug\infix2prefix_postfix.exe
