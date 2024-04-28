@@ -1,3 +1,0 @@
-D:\Code\Data-Structure\Mouse_in_Maze\Mouse_in_Maze\Mouse_in_Maze\x64\Release\Mouse_in_Maze.vcxproj.AssemblyReference.cache
-D:\Code\Data-Structure\Mouse_in_Maze\Mouse_in_Maze\Mouse_in_Maze\x64\Release\Mouse_in_Maze.Form1.resources
-D:\Code\Data-Structure\Mouse_in_Maze\Mouse_in_Maze\Mouse_in_Maze\x64\Release\Mouse_in_Maze.vcxproj.GenerateResource.cache
