@@ -1,3 +1,0 @@
-D:\Code\Data-Structure\SinglyLinkedList\SinglyLinkedList\x64\Release\SinglyLinkedList.vcxproj.AssemblyReference.cache
-D:\Code\Data-Structure\SinglyLinkedList\SinglyLinkedList\x64\Release\SinglyLinkedList.Form1.resources
-D:\Code\Data-Structure\SinglyLinkedList\SinglyLinkedList\x64\Release\SinglyLinkedList.vcxproj.GenerateResource.cache
