@@ -106,6 +106,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ button_deleteQ;
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Button^ button_Reverse;
 
 	private:
 		/// <summary>
@@ -150,13 +151,14 @@ namespace CppCLRWinFormsProject {
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->button_deleteQ = (gcnew System::Windows::Forms::Button());
 			this->button_insertQ = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->richTextBox3 = (gcnew System::Windows::Forms::RichTextBox());
-			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->button_Reverse = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -176,6 +178,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->button_Reverse);
 			this->tabPage1->Controls->Add(this->textBox_range);
 			this->tabPage1->Controls->Add(this->label4);
 			this->tabPage1->Controls->Add(this->textBox_N);
@@ -197,7 +200,7 @@ namespace CppCLRWinFormsProject {
 			this->tabPage1->Controls->Add(this->listBox1);
 			this->tabPage1->Location = System::Drawing::Point(4, 28);
 			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage1->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
 			this->tabPage1->Size = System::Drawing::Size(1338, 582);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Singly circular list";
@@ -206,7 +209,7 @@ namespace CppCLRWinFormsProject {
 			// textBox_range
 			// 
 			this->textBox_range->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->textBox_range->Location = System::Drawing::Point(874, 253);
+			this->textBox_range->Location = System::Drawing::Point(874, 254);
 			this->textBox_range->Name = L"textBox_range";
 			this->textBox_range->Size = System::Drawing::Size(100, 36);
 			this->textBox_range->TabIndex = 19;
@@ -235,7 +238,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->label3->Location = System::Drawing::Point(822, 199);
+			this->label3->Location = System::Drawing::Point(822, 200);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(46, 24);
 			this->label3->TabIndex = 16;
@@ -243,9 +246,9 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button_Print
 			// 
-			this->button_Print->Location = System::Drawing::Point(471, 199);
+			this->button_Print->Location = System::Drawing::Point(529, 200);
 			this->button_Print->Name = L"button_Print";
-			this->button_Print->Size = System::Drawing::Size(250, 60);
+			this->button_Print->Size = System::Drawing::Size(192, 60);
 			this->button_Print->TabIndex = 15;
 			this->button_Print->Text = L"Print list";
 			this->button_Print->UseVisualStyleBackColor = true;
@@ -255,15 +258,15 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->richTextBox1->Location = System::Drawing::Point(8, 382);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(1324, 197);
+			this->richTextBox1->Size = System::Drawing::Size(1324, 198);
 			this->richTextBox1->TabIndex = 14;
 			this->richTextBox1->Text = L"";
 			// 
 			// button7
 			// 
-			this->button7->Location = System::Drawing::Point(471, 297);
+			this->button7->Location = System::Drawing::Point(529, 297);
 			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(855, 67);
+			this->button7->Size = System::Drawing::Size(797, 68);
 			this->button7->TabIndex = 13;
 			this->button7->Text = L"Clear all";
 			this->button7->UseVisualStyleBackColor = true;
@@ -271,7 +274,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(1020, 199);
+			this->button6->Location = System::Drawing::Point(1020, 200);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(306, 60);
 			this->button6->TabIndex = 12;
@@ -281,7 +284,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button_Delete
 			// 
-			this->button_Delete->Location = System::Drawing::Point(749, 134);
+			this->button_Delete->Location = System::Drawing::Point(748, 134);
 			this->button_Delete->Name = L"button_Delete";
 			this->button_Delete->Size = System::Drawing::Size(192, 34);
 			this->button_Delete->TabIndex = 11;
@@ -291,9 +294,9 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(985, 134);
+			this->button4->Location = System::Drawing::Point(986, 134);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(329, 34);
+			this->button4->Size = System::Drawing::Size(328, 34);
 			this->button4->TabIndex = 10;
 			this->button4->Text = L"Find target and insert element before target";
 			this->button4->UseVisualStyleBackColor = true;
@@ -301,9 +304,9 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(985, 49);
+			this->button3->Location = System::Drawing::Point(986, 50);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(329, 36);
+			this->button3->Size = System::Drawing::Size(328, 36);
 			this->button3->TabIndex = 9;
 			this->button3->Text = L"Find target and insert element after target";
 			this->button3->UseVisualStyleBackColor = true;
@@ -311,7 +314,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(749, 49);
+			this->button2->Location = System::Drawing::Point(748, 50);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(192, 36);
 			this->button2->TabIndex = 8;
@@ -321,9 +324,9 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(269, 134);
+			this->button1->Location = System::Drawing::Point(268, 134);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(223, 36);
+			this->button1->Size = System::Drawing::Size(224, 36);
 			this->button1->TabIndex = 7;
 			this->button1->Text = L"Insert \"Element\" as last";
 			this->button1->UseVisualStyleBackColor = true;
@@ -331,9 +334,9 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button_First
 			// 
-			this->button_First->Location = System::Drawing::Point(269, 49);
+			this->button_First->Location = System::Drawing::Point(268, 50);
 			this->button_First->Name = L"button_First";
-			this->button_First->Size = System::Drawing::Size(223, 36);
+			this->button_First->Size = System::Drawing::Size(224, 36);
 			this->button_First->TabIndex = 6;
 			this->button_First->Text = L"Insert \"Element\" as first";
 			this->button_First->UseVisualStyleBackColor = true;
@@ -360,7 +363,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->label2->Location = System::Drawing::Point(525, 53);
+			this->label2->Location = System::Drawing::Point(525, 52);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(81, 24);
 			this->label2->TabIndex = 3;
@@ -370,7 +373,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->label1->Location = System::Drawing::Point(40, 49);
+			this->label1->Location = System::Drawing::Point(40, 50);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(97, 24);
 			this->label1->TabIndex = 2;
@@ -382,7 +385,7 @@ namespace CppCLRWinFormsProject {
 			this->listBox1->ItemHeight = 18;
 			this->listBox1->Location = System::Drawing::Point(8, 216);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(441, 148);
+			this->listBox1->Size = System::Drawing::Size(244, 148);
 			this->listBox1->TabIndex = 1;
 			// 
 			// tabPage2
@@ -396,7 +399,7 @@ namespace CppCLRWinFormsProject {
 			this->tabPage2->Controls->Add(this->button5);
 			this->tabPage2->Location = System::Drawing::Point(4, 28);
 			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage2->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
 			this->tabPage2->Size = System::Drawing::Size(1338, 582);
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Linked Stack";
@@ -416,16 +419,16 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->label8->Location = System::Drawing::Point(403, 57);
+			this->label8->Location = System::Drawing::Point(404, 57);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(0, 24);
 			this->label8->TabIndex = 5;
 			// 
 			// richTextBox2
 			// 
-			this->richTextBox2->Location = System::Drawing::Point(19, 208);
+			this->richTextBox2->Location = System::Drawing::Point(20, 208);
 			this->richTextBox2->Name = L"richTextBox2";
-			this->richTextBox2->Size = System::Drawing::Size(1299, 347);
+			this->richTextBox2->Size = System::Drawing::Size(1298, 348);
 			this->richTextBox2->TabIndex = 4;
 			this->richTextBox2->Text = L"";
 			// 
@@ -449,9 +452,9 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button8
 			// 
-			this->button8->Location = System::Drawing::Point(325, 102);
+			this->button8->Location = System::Drawing::Point(326, 102);
 			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(194, 55);
+			this->button8->Size = System::Drawing::Size(194, 56);
 			this->button8->TabIndex = 1;
 			this->button8->Text = L"pop";
 			this->button8->UseVisualStyleBackColor = true;
@@ -459,9 +462,9 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(43, 102);
+			this->button5->Location = System::Drawing::Point(44, 102);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(210, 55);
+			this->button5->Size = System::Drawing::Size(210, 56);
 			this->button5->TabIndex = 0;
 			this->button5->Text = L"Push";
 			this->button5->UseVisualStyleBackColor = false;
@@ -478,24 +481,34 @@ namespace CppCLRWinFormsProject {
 			this->tabPage3->Controls->Add(this->richTextBox3);
 			this->tabPage3->Location = System::Drawing::Point(4, 28);
 			this->tabPage3->Name = L"tabPage3";
-			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage3->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
 			this->tabPage3->Size = System::Drawing::Size(1338, 582);
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"Linked Queue";
 			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
+			this->label9->Location = System::Drawing::Point(500, 212);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(157, 24);
+			this->label9->TabIndex = 6;
+			this->label9->Text = L"Delete element :";
+			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
 			this->label11->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->label11->Location = System::Drawing::Point(680, 211);
+			this->label11->Location = System::Drawing::Point(680, 212);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(0, 24);
 			this->label11->TabIndex = 5;
 			// 
 			// button_deleteQ
 			// 
-			this->button_deleteQ->Location = System::Drawing::Point(503, 77);
+			this->button_deleteQ->Location = System::Drawing::Point(502, 76);
 			this->button_deleteQ->Name = L"button_deleteQ";
 			this->button_deleteQ->Size = System::Drawing::Size(160, 63);
 			this->button_deleteQ->TabIndex = 4;
@@ -505,7 +518,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button_insertQ
 			// 
-			this->button_insertQ->Location = System::Drawing::Point(304, 77);
+			this->button_insertQ->Location = System::Drawing::Point(304, 76);
 			this->button_insertQ->Name = L"button_insertQ";
 			this->button_insertQ->Size = System::Drawing::Size(160, 63);
 			this->button_insertQ->TabIndex = 3;
@@ -516,7 +529,7 @@ namespace CppCLRWinFormsProject {
 			// textBox3
 			// 
 			this->textBox3->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->textBox3->Location = System::Drawing::Point(155, 91);
+			this->textBox3->Location = System::Drawing::Point(154, 92);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(100, 36);
 			this->textBox3->TabIndex = 2;
@@ -535,19 +548,20 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->richTextBox3->Location = System::Drawing::Point(8, 288);
 			this->richTextBox3->Name = L"richTextBox3";
-			this->richTextBox3->Size = System::Drawing::Size(1318, 263);
+			this->richTextBox3->Size = System::Drawing::Size(1318, 264);
 			this->richTextBox3->TabIndex = 0;
 			this->richTextBox3->Text = L"";
 			// 
-			// label9
+			// button_Reverse
 			// 
-			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
-			this->label9->Location = System::Drawing::Point(499, 211);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(157, 24);
-			this->label9->TabIndex = 6;
-			this->label9->Text = L"Delete element :";
+			this->button_Reverse->Font = (gcnew System::Drawing::Font(L"新細明體", 12));
+			this->button_Reverse->Location = System::Drawing::Point(268, 297);
+			this->button_Reverse->Name = L"button_Reverse";
+			this->button_Reverse->Size = System::Drawing::Size(224, 68);
+			this->button_Reverse->TabIndex = 1;
+			this->button_Reverse->Text = L"Reverse List";
+			this->button_Reverse->UseVisualStyleBackColor = true;
+			this->button_Reverse->Click += gcnew System::EventHandler(this, &Form1::button_Reverse_Click);
 			// 
 			// Form1
 			// 
@@ -865,7 +879,7 @@ namespace CppCLRWinFormsProject {
 			cur->next = newNode;
 
 		}
-		private: void deleteQ() {
+		void deleteQ() {
 
 			if (head->next != NULL) {
 
@@ -884,6 +898,19 @@ namespace CppCLRWinFormsProject {
 				richTextBox3->Text += "==================\n";
 
 			}
+
+		}
+		void ReverseList() {
+			struct Node *r, *s,*t;
+			r = first;
+			s = NULL;
+			while (r != NULL) {
+				t = s;
+				s = r;
+				r = r->next;
+				s->next = t;
+			}
+			first = s;
 
 		}
 
@@ -1010,6 +1037,11 @@ namespace CppCLRWinFormsProject {
 
 		deleteQ();
 
+	}
+	private: System::Void button_Reverse_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+		ReverseList();
+		PrintList();
 	}
 };
 }
