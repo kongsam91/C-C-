@@ -1,3 +1,4 @@
 ﻿  CppCLR_WinFormsProject.cpp
+D:\Code\Data-Structure\BinarySearchTree\BinarySearchTree\Form1.h(806,1): warning C4715: 'CppCLRWinFormsProject::Form1::DeleteQueue': 不是所有控制路徑都傳回值
   AssemblyInfo.obj : 發現 MSIL 模組。MSIL 的累加連結已停用。正在執行完整連結
   BinarySearchTree.vcxproj -> D:\Code\Data-Structure\BinarySearchTree\x64\Debug\BinarySearchTree.exe

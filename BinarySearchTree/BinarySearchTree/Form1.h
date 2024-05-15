@@ -49,13 +49,14 @@ struct DrawTreeNode {
 
 };
 
+
 struct BSTreeCNode* Croot;
 
 struct StackNode* top;
 struct DrawTreeNode* DrawRoot;
 int* X;
 int* Y;
-
+struct QNode* front, * rear;
 
 
 namespace CppCLRWinFormsProject {
@@ -174,11 +175,11 @@ namespace CppCLRWinFormsProject {
 			this->button_Search = (gcnew System::Windows::Forms::Button());
 			this->textBox_Search = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->radioButton_Level = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton_post = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton_in = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton_pre = (gcnew System::Windows::Forms::RadioButton());
 			this->button_Print = (gcnew System::Windows::Forms::Button());
-			this->radioButton_Level = (gcnew System::Windows::Forms::RadioButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar2))->BeginInit();
 			this->tabPage2->SuspendLayout();
@@ -270,7 +271,7 @@ namespace CppCLRWinFormsProject {
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(16, 18);
 			this->label6->TabIndex = 8;
-			this->label6->Text = L"5";
+			this->label6->Text = L"0";
 			// 
 			// label7
 			// 
@@ -313,7 +314,7 @@ namespace CppCLRWinFormsProject {
 			// button_RandomInteger
 			// 
 			this->button_RandomInteger->Font = (gcnew System::Drawing::Font(L"新細明體", 14));
-			this->button_RandomInteger->Location = System::Drawing::Point(55, 552);
+			this->button_RandomInteger->Location = System::Drawing::Point(55, 527);
 			this->button_RandomInteger->Name = L"button_RandomInteger";
 			this->button_RandomInteger->Size = System::Drawing::Size(361, 60);
 			this->button_RandomInteger->TabIndex = 14;
@@ -404,6 +405,17 @@ namespace CppCLRWinFormsProject {
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"groupBox1";
 			// 
+			// radioButton_Level
+			// 
+			this->radioButton_Level->AutoSize = true;
+			this->radioButton_Level->Location = System::Drawing::Point(13, 156);
+			this->radioButton_Level->Name = L"radioButton_Level";
+			this->radioButton_Level->Size = System::Drawing::Size(108, 22);
+			this->radioButton_Level->TabIndex = 23;
+			this->radioButton_Level->TabStop = true;
+			this->radioButton_Level->Text = L"level order";
+			this->radioButton_Level->UseVisualStyleBackColor = true;
+			// 
 			// radioButton_post
 			// 
 			this->radioButton_post->AutoSize = true;
@@ -447,17 +459,6 @@ namespace CppCLRWinFormsProject {
 			this->button_Print->UseVisualStyleBackColor = true;
 			this->button_Print->Click += gcnew System::EventHandler(this, &Form1::button_Print_Click);
 			// 
-			// radioButton_Level
-			// 
-			this->radioButton_Level->AutoSize = true;
-			this->radioButton_Level->Location = System::Drawing::Point(13, 156);
-			this->radioButton_Level->Name = L"radioButton_Level";
-			this->radioButton_Level->Size = System::Drawing::Size(108, 22);
-			this->radioButton_Level->TabIndex = 23;
-			this->radioButton_Level->TabStop = true;
-			this->radioButton_Level->Text = L"level order";
-			this->radioButton_Level->UseVisualStyleBackColor = true;
-			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 18);
@@ -498,17 +499,7 @@ namespace CppCLRWinFormsProject {
 		}
 
 		//Recursive
-		void Inorder(struct BSTreeNode* node) { //LVR
 
-			if (node != NULL) {
-
-				Inorder(node->leftchild);  //L
-				tree += Convert::ToString(node->data) + "_";    //V
-				Inorder(node->rightchild);  //R
-
-			}
-
-		}
 		//requirement 1
 		int InsertBST(int x) {
 			struct BSTreeNode* p, * q;
@@ -561,6 +552,7 @@ namespace CppCLRWinFormsProject {
 			return 1;
 
 		}
+
 		//requirement 1
 		void print_BSTree(struct BSTreeNode* node) { //LVR 
 
@@ -573,15 +565,26 @@ namespace CppCLRWinFormsProject {
 			}
 
 		}
-		void print_BSTree_preorder(struct BSTreeNode* node)
+		void Inorder(struct BSTreeNode* node) { //LVR
+
+			if (node != NULL) {
+
+				Inorder(node->leftchild);  //L
+				tree += Convert::ToString(node->data) + "_";    //V
+				Inorder(node->rightchild);  //R
+
+			}
+
+		}
+		void Preorder(struct BSTreeNode* node) //VLR
 
 		{
-			if (node != NULL)
 
-			{
-				tree += node->data + "+";
-				print_BSTree_preorder(node->leftchild);
-				print_BSTree_preorder(node->rightchild);
+			if (node != NULL) {
+
+				tree += node->data.ToString() + "_";//V
+				Preorder(node->leftchild);//L
+				Preorder(node->rightchild);//R
 
 			}
 
@@ -596,6 +599,22 @@ namespace CppCLRWinFormsProject {
 
 			}
 
+		}
+
+		//requirement 5
+		void Levelorder(BSTreeNode* node) {
+			AddQueue(node); //先將節點放入Queue
+			while (front != NULL)
+			{
+				node = DeleteQueue();
+				tree += (node->data).ToString() + "_";
+				if (node->leftchild != NULL) {
+					AddQueue(node->leftchild);
+				}
+				if (node->rightchild != NULL) {
+					AddQueue(node->rightchild);
+				}
+			}
 		}
 
 		//requirement 4
@@ -731,13 +750,13 @@ namespace CppCLRWinFormsProject {
 
 			if (radioButton_in->Checked) { 
 
-				print_BSTree(root); 
+				Inorder(root);
 				listBox1->Items->Add("Inorder (recursively):      " + tree);
 
 			}
 			else if (radioButton_pre->Checked) { 
 
-				print_BSTree_preorder(root); 
+				Preorder(root);
 				listBox1->Items->Add("preorder (recursively):      " + tree);
 
 			}
@@ -747,29 +766,45 @@ namespace CppCLRWinFormsProject {
 				listBox1->Items->Add("postorder (recursively):      " + tree);
 
 			}
-			
-		}
-		void Levelorder(struct BSTreeNode* node) {
+			else if (radioButton_Level->Checked) {
 
-			AddQueue(node); //先將節點放入Queue
+				Levelorder(root);
+				listBox1->Items->Add("levelorder (recursively):      " + tree);
 
-			while (front != NULL) {
-
-				node = DeleteQueue();
-				tree += node->data.ToString() + "_";//先印左右子樹的共同父代
-				if (node->leftchild != NULL) {
-
-					AddQueue(node->leftchild);   //往左
-				}
-
-				if (node->rightchild != NULL) {
-
-					AddQueue(node->rightchild);  //往右
-
-				}
 			}
 
 		}
+		void AddQueue(struct BSTreeNode* Tnode) {
+
+			struct QNode* node = new struct QNode;  //向記憶體要空間
+			node->treenode = Tnode;               //將傳進來的節點給node
+			node->next = NULL;
+			if (front == NULL) { front = node; }      //若Queue為空，則node就是第一個
+
+			else rear->next = node;               //若不為空，則指項原本最後一個的後一個
+
+			rear = node;
+
+		}
+
+		struct BSTreeNode* DeleteQueue() {
+
+			struct BSTreeNode* Tnode;
+			struct QNode* old_front;
+			if (front == NULL); //QueueEmpty();
+
+			else {
+
+				Tnode = front->treenode;
+				old_front = front;
+				front = front->next;
+				free(old_front);
+				return Tnode;
+
+			}
+
+		}
+
 
 
 #pragma endregion
