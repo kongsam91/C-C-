@@ -1,3 +1,0 @@
-D:\Code\Data-Structure\BinarySearchTree\BinarySearchTree\x64\Release\BinarySearchTree.vcxproj.AssemblyReference.cache
-D:\Code\Data-Structure\BinarySearchTree\BinarySearchTree\x64\Release\BinarySearchTree.Form1.resources
-D:\Code\Data-Structure\BinarySearchTree\BinarySearchTree\x64\Release\BinarySearchTree.vcxproj.GenerateResource.cache
