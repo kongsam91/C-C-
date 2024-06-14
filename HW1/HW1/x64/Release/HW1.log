@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  pch.cpp
   AssemblyInfo.cpp
   CppCLR_WinFormsProject.cpp
@@ -8,6 +9,22 @@ C:\C_2024\HW1\HW1\Form1.h(352,8): warning C4101: 'i': 未參考的區域變數
   (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
   
 C:\C_2024\HW1\HW1\Form1.h(371,10): warning C4101: 'j': 未參考的區域變數
+=======
+﻿  CppCLR_WinFormsProject.cpp
+D:\Code\Data-Structure\HW1\HW1\Form1.h(627,11): warning C4101: 'j': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+D:\Code\Data-Structure\HW1\HW1\Form1.h(627,8): warning C4101: 'i': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+D:\Code\Data-Structure\HW1\HW1\Form1.h(646,11): warning C4101: 'j': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+D:\Code\Data-Structure\HW1\HW1\Form1.h(646,8): warning C4101: 'i': 未參考的區域變數
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+D:\Code\Data-Structure\HW1\HW1\Form1.h(731,14): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
+>>>>>>> 9b13e03ac162c9abbac1a2a514e4a31735f732b1
   (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
   
 C:\C_2024\HW1\HW1\Form1.h(371,8): warning C4101: 'i': 未參考的區域變數

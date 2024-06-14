@@ -1,9 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\C_2024\\HW1\\",
+  "WorkspaceRootPath": "D:\\Code\\Data-Structure\\HW1\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{0F745E48-6603-4960-827D-D9137B17CFC8}|HW1\\HW1.vcxproj|C:\\C_2024\\HW1\\HW1\\Form1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+=======
+      "AbsoluteMoniker": "D:0:0:{0F745E48-6603-4960-827D-D9137B17CFC8}|HW1\\HW1.vcxproj|D:\\Code\\Data-Structure\\HW1\\HW1\\Form1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0F745E48-6603-4960-827D-D9137B17CFC8}|HW1\\HW1.vcxproj|solutionrelative:HW1\\Form1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F745E48-6603-4960-827D-D9137B17CFC8}|HW1\\HW1.vcxproj|D:\\Code\\Data-Structure\\HW1\\HW1\\Form1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+>>>>>>> 9b13e03ac162c9abbac1a2a514e4a31735f732b1
       "RelativeMoniker": "D:0:0:{0F745E48-6603-4960-827D-D9137B17CFC8}|HW1\\HW1.vcxproj|solutionrelative:HW1\\Form1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     },
     {
@@ -18,6 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 1,
           "Children": [
             {
@@ -32,18 +41,38 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-02-22T12:13:46.919Z",
               "EditorCaption": ""
+=======
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+>>>>>>> 9b13e03ac162c9abbac1a2a514e4a31735f732b1
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.h [\u8A2D\u8A08]",
-              "DocumentMoniker": "C:\\C_2024\\HW1\\HW1\\Form1.h",
+              "DocumentMoniker": "D:\\Code\\Data-Structure\\HW1\\HW1\\Form1.h",
               "RelativeDocumentMoniker": "HW1\\Form1.h",
-              "ToolTip": "C:\\C_2024\\HW1\\HW1\\Form1.h [\u8A2D\u8A08]",
+              "ToolTip": "D:\\Code\\Data-Structure\\HW1\\HW1\\Form1.h [\u8A2D\u8A08]",
               "RelativeToolTip": "HW1\\Form1.h [\u8A2D\u8A08]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-02-22T08:16:26.551Z",
+              "WhenOpened": "2024-03-04T15:21:35.215Z",
               "EditorCaption": " [\u8A2D\u8A08]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.h",
+              "DocumentMoniker": "D:\\Code\\Data-Structure\\HW1\\HW1\\Form1.h",
+              "RelativeDocumentMoniker": "HW1\\Form1.h",
+              "ToolTip": "D:\\Code\\Data-Structure\\HW1\\HW1\\Form1.h",
+              "RelativeToolTip": "HW1\\Form1.h",
+              "ViewState": "AQIAAGoCAAAAAAAAAAAAAH8CAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-03T14:23:49.149Z",
+              "EditorCaption": ""
             }
           ]
         }

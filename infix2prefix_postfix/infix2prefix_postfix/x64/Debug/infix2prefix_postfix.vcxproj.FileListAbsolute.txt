@@ -1,0 +1,3 @@
+D:\Code\Data-Structure\infix2prefix_postfix\infix2prefix_postfix\x64\Debug\infix2prefix_postfix.vcxproj.AssemblyReference.cache
+D:\Code\Data-Structure\infix2prefix_postfix\infix2prefix_postfix\x64\Debug\infix2prefix_postfix.Form1.resources
+D:\Code\Data-Structure\infix2prefix_postfix\infix2prefix_postfix\x64\Debug\infix2prefix_postfix.vcxproj.GenerateResource.cache
