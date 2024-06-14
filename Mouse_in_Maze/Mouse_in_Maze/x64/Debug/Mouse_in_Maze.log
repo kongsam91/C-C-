@@ -1,0 +1,7 @@
+﻿  CppCLR_WinFormsProject.cpp
+C:\C_2024\Mouse_in_Maze\Mouse_in_Maze\Form1.h(456,14): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
+  (編譯來源檔案 '/CppCLR_WinFormsProject.cpp')
+  
+C:\C_2024\Mouse_in_Maze\Mouse_in_Maze\Form1.h(556,1): warning C4700: 使用了未初始化的區域變數 'i'
+  AssemblyInfo.obj : 發現 MSIL 模組。MSIL 的累加連結已停用。正在執行完整連結
+  Mouse_in_Maze.vcxproj -> C:\C_2024\Mouse_in_Maze\x64\Debug\Mouse_in_Maze.exe

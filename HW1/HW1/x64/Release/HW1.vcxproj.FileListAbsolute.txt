@@ -1,3 +1,6 @@
 D:\Code\Data-Structure\HW1\HW1\x64\Release\HW1.vcxproj.AssemblyReference.cache
 D:\Code\Data-Structure\HW1\HW1\x64\Release\HW1.Form1.resources
 D:\Code\Data-Structure\HW1\HW1\x64\Release\HW1.vcxproj.GenerateResource.cache
+C:\C_2024\HW1\HW1\x64\Release\HW1.vcxproj.AssemblyReference.cache
+C:\C_2024\HW1\HW1\x64\Release\HW1.Form1.resources
+C:\C_2024\HW1\HW1\x64\Release\HW1.vcxproj.GenerateResource.cache

@@ -61,6 +61,7 @@ namespace CppCLRWinFormsProject {
 
 	private: System::Windows::Forms::Button^ button_BubbleSort;
 	private: System::Windows::Forms::Label^ label_CPUTIME_BS;
+	private: System::Windows::Forms::Label^ label3;
 
 
 
@@ -98,6 +99,7 @@ namespace CppCLRWinFormsProject {
 			this->listBox_BubbleSort = (gcnew System::Windows::Forms::ListBox());
 			this->button_BubbleSort = (gcnew System::Windows::Forms::Button());
 			this->label_CPUTIME_BS = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -145,7 +147,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->listBox2->FormattingEnabled = true;
 			this->listBox2->ItemHeight = 20;
-			this->listBox2->Location = System::Drawing::Point(779, 229);
+			this->listBox2->Location = System::Drawing::Point(719, 229);
 			this->listBox2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->listBox2->Name = L"listBox2";
 			this->listBox2->Size = System::Drawing::Size(210, 424);
@@ -154,7 +156,7 @@ namespace CppCLRWinFormsProject {
 			// button2
 			// 
 			this->button2->Enabled = false;
-			this->button2->Location = System::Drawing::Point(779, 685);
+			this->button2->Location = System::Drawing::Point(719, 686);
 			this->button2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(214, 69);
@@ -210,7 +212,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->label_CPUTIME_SS->AutoSize = true;
 			this->label_CPUTIME_SS->Font = (gcnew System::Drawing::Font(L"微軟正黑體", 9, System::Drawing::FontStyle::Bold));
-			this->label_CPUTIME_SS->Location = System::Drawing::Point(772, 777);
+			this->label_CPUTIME_SS->Location = System::Drawing::Point(715, 821);
 			this->label_CPUTIME_SS->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->label_CPUTIME_SS->Name = L"label_CPUTIME_SS";
 			this->label_CPUTIME_SS->Size = System::Drawing::Size(95, 19);
@@ -232,7 +234,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"新細明體", 10, System::Drawing::FontStyle::Bold));
-			this->label5->Location = System::Drawing::Point(809, 171);
+			this->label5->Location = System::Drawing::Point(757, 171);
 			this->label5->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(120, 17);
@@ -276,7 +278,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->listBox_BubbleSort->FormattingEnabled = true;
 			this->listBox_BubbleSort->ItemHeight = 20;
-			this->listBox_BubbleSort->Location = System::Drawing::Point(1040, 232);
+			this->listBox_BubbleSort->Location = System::Drawing::Point(1016, 229);
 			this->listBox_BubbleSort->Name = L"listBox_BubbleSort";
 			this->listBox_BubbleSort->Size = System::Drawing::Size(209, 424);
 			this->listBox_BubbleSort->TabIndex = 16;
@@ -284,9 +286,9 @@ namespace CppCLRWinFormsProject {
 			// button_BubbleSort
 			// 
 			this->button_BubbleSort->Enabled = false;
-			this->button_BubbleSort->Location = System::Drawing::Point(1057, 680);
+			this->button_BubbleSort->Location = System::Drawing::Point(1016, 683);
 			this->button_BubbleSort->Name = L"button_BubbleSort";
-			this->button_BubbleSort->Size = System::Drawing::Size(178, 74);
+			this->button_BubbleSort->Size = System::Drawing::Size(209, 74);
 			this->button_BubbleSort->TabIndex = 17;
 			this->button_BubbleSort->Text = L"BubbleSort";
 			this->button_BubbleSort->UseVisualStyleBackColor = true;
@@ -301,11 +303,21 @@ namespace CppCLRWinFormsProject {
 			this->label_CPUTIME_BS->TabIndex = 18;
 			this->label_CPUTIME_BS->Text = L"CPU time = ";
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(1053, 171);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(97, 20);
+			this->label3->TabIndex = 19;
+			this->label3->Text = L"Bubble Sort";
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(10, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1304, 915);
+			this->ClientSize = System::Drawing::Size(1497, 915);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label_CPUTIME_BS);
 			this->Controls->Add(this->button_BubbleSort);
 			this->Controls->Add(this->listBox_BubbleSort);
@@ -377,9 +389,7 @@ namespace CppCLRWinFormsProject {
 	{
 		listBox1->Items->Clear();//每次產生新一輪變數時，會把上次結果清掉
 
-		//if (int::TryParse(textBox1->Text)) 判斷輸入是否正常
-
-
+		//判斷輸入是否正常
 		try
 		{
 			int n = Int32::Parse(textBox1->Text); 
@@ -391,11 +401,11 @@ namespace CppCLRWinFormsProject {
 			{
 				if (checkBox_PrintOutPut->Checked) {
 					list[i] = rand() % range + 1; //產生範圍從0到range到數列
-					list_BubbleSort[i] = list[i];
+					list_BubbleSort[i] = list[i]; //複製一份原本亂的陣列到BubbleSort排序用的陣列
 					listBox1->Items->Add("data[" + Convert::ToString(i) + "] = " + list[i]);
 				}
 			}
-			//沒有數列前不能按排序Button
+			//沒有正確數列產生前不能按排序Button
 			button2->Enabled = true; 
 			button_BubbleSort->Enabled = true; 
 

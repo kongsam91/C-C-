@@ -1,0 +1,3 @@
+C:\C_2024\ShortestPath\ShortestPath\x64\Debug\ShortestPath.vcxproj.AssemblyReference.cache
+C:\C_2024\ShortestPath\ShortestPath\x64\Debug\ShortestPath.Form1.resources
+C:\C_2024\ShortestPath\ShortestPath\x64\Debug\ShortestPath.vcxproj.GenerateResource.cache
